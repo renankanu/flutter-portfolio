@@ -4,7 +4,6 @@ import 'package:port_dart/app/screens/components/my_drawer.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:port_dart/app/utils/images.dart';
 import 'package:port_dart/app/utils/responsive.dart';
-import 'package:port_dart/main.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -12,17 +11,28 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final dataKey = new GlobalKey();
-
   List _isHovering = [false, false, false, false];
 
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      key: _scaffoldKey,
       extendBodyBehindAppBar: true,
       appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
+              leading: GestureDetector(
+                onTap: () => {_scaffoldKey.currentState.openDrawer()},
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  child: Image.asset(
+                    'assets/images/menu.png',
+                    height: 24,
+                  ),
+                ),
+              ),
               backgroundColor: MyColors.background,
               centerTitle: true,
               title: RichText(
