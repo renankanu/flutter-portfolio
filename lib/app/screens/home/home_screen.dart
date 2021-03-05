@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
               constraints: BoxConstraints(maxWidth: 1240),
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 60),
+                  padding: const EdgeInsets.only(bottom: 60, top: 80),
                   child: Column(
                     children: [
                       new SizedBox(

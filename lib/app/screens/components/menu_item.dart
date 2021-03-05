@@ -18,28 +18,36 @@ class _MenuItemState extends State<MenuItem> {
     return InkWell(
       onHover: (value) => widget.onHolver(value),
       onTap: () {},
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            widget.title,
-            style: TextStyle(
-                color: widget.isHolver ? MyColors.vistaBlue : MyColors.white,
-                fontFamily: 'FiraCode'),
-          ),
-          SizedBox(height: 5),
-          Visibility(
-            maintainAnimation: true,
-            maintainState: true,
-            maintainSize: true,
-            visible: widget.isHolver,
-            child: Container(
-              height: 2,
-              width: 20,
-              color: MyColors.vistaBlue,
+      child: Container(
+        height: 30,
+        child: Stack(
+          children: [
+            Align(
+              child: Text(
+                widget.title,
+                style: TextStyle(
+                    color:
+                        widget.isHolver ? MyColors.vistaBlue : MyColors.white,
+                    fontFamily: 'FiraCode'),
+              ),
             ),
-          )
-        ],
+            Positioned.fill(
+                child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Visibility(
+                maintainAnimation: true,
+                maintainState: true,
+                maintainSize: true,
+                visible: widget.isHolver,
+                child: Container(
+                  height: 2,
+                  width: 20,
+                  color: MyColors.vistaBlue,
+                ),
+              ),
+            ))
+          ],
+        ),
       ),
     );
   }

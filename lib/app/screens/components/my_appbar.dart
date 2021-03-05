@@ -19,7 +19,7 @@ class _MyAppBarState extends State<MyAppBar> {
             color: Colors.black, offset: Offset(0.0, 2.0), blurRadius: 6.0)
       ]),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 60, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 100, vertical: 12),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
