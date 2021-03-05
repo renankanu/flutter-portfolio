@@ -11,9 +11,10 @@ class HomeScreen extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 1000),
         child: Container(
+          constraints: BoxConstraints(minWidth: 100, maxWidth: 200),
           decoration: BoxDecoration(color: MyColors.background, boxShadow: [
             BoxShadow(
-                color: Colors.black, offset: Offset(0.0, 1.0), blurRadius: 6.0)
+                color: Colors.black, offset: Offset(0.0, 3.0), blurRadius: 6.0)
           ]),
           child: Padding(
             padding: EdgeInsets.all(20),
@@ -77,23 +78,36 @@ class HomeScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 60),
-              child: Column(
-                children: [
-                  new SizedBox(
-                      height: 360.0, width: double.infinity, child: new Card()),
-                  new SizedBox(
-                      height: 360.0, width: double.infinity, child: new Card()),
-                  new SizedBox(
-                      height: 360.0, width: double.infinity, child: new Card()),
-                  // destination
-                  new Card(
-                    key: dataKey,
-                    child: new Text("data\n\n\n\n\n\ndata"),
-                  )
-                ],
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              constraints: BoxConstraints(maxWidth: 1240),
+              color: Colors.amber,
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 60),
+                  child: Column(
+                    children: [
+                      new SizedBox(
+                          height: 360.0,
+                          width: double.infinity,
+                          child: new Card()),
+                      new SizedBox(
+                          height: 360.0,
+                          width: double.infinity,
+                          child: new Card()),
+                      new SizedBox(
+                          height: 360.0,
+                          width: double.infinity,
+                          child: new Card()),
+                      // destination
+                      new Card(
+                        key: dataKey,
+                        child: new Text("data\n\n\n\n\n\ndata"),
+                      )
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
