@@ -12,4 +12,5 @@ abstract class MyColors {
   static const burntSienna = Color(0xFFED6A5E);
   static const casablanca = Color(0xFFF4BE4F);
   static const mantis = Color(0xFF62C655);
+  static const silver = Color(0xFFCCCCCC);
 }

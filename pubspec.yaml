@@ -1,7 +1,7 @@
 name: port_dart
 description: A new Flutter project.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
@@ -14,13 +14,13 @@ dependencies:
   url_strategy: ^0.2.0
   cupertino_icons: ^1.0.2
   animated_text_kit: ^4.0.0
-  
+  font_awesome_flutter: ^8.11.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
-
   uses-material-design: true
 
   assets:
