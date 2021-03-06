@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:port_dart/app/screens/about/about_section.dart';
 import 'package:port_dart/app/screens/components/my_appbar.dart';
 import 'package:port_dart/app/screens/components/my_drawer.dart';
+import 'package:port_dart/app/screens/intro/intro_screen.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:port_dart/app/utils/images.dart';
 import 'package:port_dart/app/utils/responsive.dart';
@@ -83,6 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.only(bottom: 60, top: 60),
                   child: Column(
                     children: [
+                      IntroScreen(),
                       AboutSection(),
                       new SizedBox(
                           height: 360.0,
