@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:port_dart/app/utils/images.dart';
+import 'dart:js' as js;
 
 import '../../utils/colors.dart';
 
@@ -14,9 +15,8 @@ class _AboutSectionState extends State<AboutSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(maxWidth: 960),
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
+      constraints: BoxConstraints(
+          maxWidth: 960, minHeight: MediaQuery.of(context).size.height),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Column(
@@ -25,7 +25,7 @@ class _AboutSectionState extends State<AboutSection> {
               'Sobre mim -----',
               style: TextStyle(
                   fontFamily: 'FiraCode',
-                  fontSize: 20,
+                  fontSize: 36,
                   fontWeight: FontWeight.w600,
                   color: MyColors.vistaBlue),
             ),
@@ -50,11 +50,21 @@ class _AboutSectionState extends State<AboutSection> {
                     child: Column(
                       children: [
                         Text(
-                          'Olá, meu nome é Renan e moro em Cianorte-PR. Comecei na programação em 2016 como desenvolvedor Android Nativo com Java, em 2018 comecei a programar Android Nativo com Kotlin, PHP e trabalhei com alguns serviços da AWS como: eC2, RDS, SNS, SES, S3... E no segundo semestre de 2019 comecei a programar em React Native e Flutter na Megaleios e estou até o momento.',
+                          'Olá, meu nome é Renan sou de Cianorte-PR. Comecei na programação em 2016 como desenvolvedor Android Nativo com Java, em 2018 comecei a programar Android Nativo com Kotlin, PHP e trabalhei com alguns serviços da AWS como: eC2, RDS, SNS, SES, S3... E no segundo semestre de 2019 comecei a programar em React Native e Flutter na Megaleios e estou até o momento.',
                           style: TextStyle(
                             fontFamily: 'FiraCode',
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
+                            color: MyColors.white,
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          'Gosto de todos os assuntos que envolvem tecnologia, jogador de rugby, gosto de jogos eletrônicos, praticante de musculação e estudande de inglês. Café, café e café ☕',
+                          style: TextStyle(
+                            fontFamily: 'FiraCode',
+                            fontSize: 16,
+                            fontWeight: FontWeight.w300,
                             color: MyColors.white,
                           ),
                         ),
@@ -64,6 +74,9 @@ class _AboutSectionState extends State<AboutSection> {
                           children: [
                             SocialButton(
                               isHovering: _isHovering[0],
+                              onPress: () => js.context.callMethod('open', [
+                                'https://www.facebook.com/renan.santos.92123'
+                              ]),
                               onHover: (value) {
                                 setState(() {
                                   _isHovering[0] = value;
@@ -74,6 +87,8 @@ class _AboutSectionState extends State<AboutSection> {
                             SizedBox(width: 20),
                             SocialButton(
                               isHovering: _isHovering[1],
+                              onPress: () => js.context.callMethod(
+                                  'open', ['https://github.com/renankanu']),
                               onHover: (value) {
                                 setState(() {
                                   _isHovering[1] = value;
@@ -84,6 +99,9 @@ class _AboutSectionState extends State<AboutSection> {
                             SizedBox(width: 20),
                             SocialButton(
                               isHovering: _isHovering[2],
+                              onPress: () => js.context.callMethod('open', [
+                                'https://www.linkedin.com/in/renansantosbr/'
+                              ]),
                               onHover: (value) {
                                 setState(() {
                                   _isHovering[2] = value;
@@ -111,20 +129,23 @@ class SocialButton extends StatelessWidget {
     Key key,
     @required bool isHovering,
     @required Function onHover,
+    @required Function onPress,
     @required IconData icon,
   })  : _isHovering = isHovering,
         _onHover = onHover,
+        _onPress = onPress,
         _icon = icon,
         super(key: key);
 
   final bool _isHovering;
   final Function _onHover;
+  final Function _onPress;
   final IconData _icon;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: _onPress,
       onHover: (value) {
         _onHover(value);
       },
