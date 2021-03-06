@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:port_dart/app/screens/about/about_section.dart';
 import 'package:port_dart/app/screens/components/my_appbar.dart';
 import 'package:port_dart/app/screens/components/my_drawer.dart';
 import 'package:port_dart/app/utils/colors.dart';
@@ -82,6 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.only(bottom: 60, top: 60),
                   child: Column(
                     children: [
+                      AboutSection(),
                       new SizedBox(
                           height: 360.0,
                           width: double.infinity,
@@ -99,23 +101,23 @@ class _HomeScreenState extends State<HomeScreen> {
                         key: dataKey,
                         child: new Text("data\n\n\n\n\n\ndata"),
                       )
+                      //                       Align(
+                      //   alignment: Alignment.bottomCenter,
+                      //   child: Container(
+                      //     height: 48,
+                      //     color: MyColors.white,
+                      //   ),
+                      //   // child: InkWell(
+                      //   //   onTap: () => Scrollable.ensureVisible(dataKey.currentContext),
+                      //   //   child: new Text("Scroll to data"),
+                      //   // ),
+                      // )
                     ],
                   ),
                 ),
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 48,
-              color: MyColors.white,
-            ),
-            // child: InkWell(
-            //   onTap: () => Scrollable.ensureVisible(dataKey.currentContext),
-            //   child: new Text("Scroll to data"),
-            // ),
-          )
         ],
       ),
     );
