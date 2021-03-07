@@ -16,6 +16,7 @@ class _AboutSectionState extends State<AboutSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(top: 64),
       constraints: BoxConstraints(
           maxWidth: 960, minHeight: MediaQuery.of(context).size.height),
       child: Padding(
