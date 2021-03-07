@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:port_dart/app/screens/about/components/social_button.dart';
 import 'package:port_dart/app/utils/colors.dart';
-import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutDesc extends StatefulWidget {
   const AboutDesc({
@@ -18,6 +18,19 @@ class AboutDesc extends StatefulWidget {
 }
 
 class _AboutDescState extends State<AboutDesc> {
+  Future<void> _launchInBrowser(String url) async {
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+        headers: <String, String>{'my_header_key': 'my_header_value'},
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,8 +61,8 @@ class _AboutDescState extends State<AboutDesc> {
             children: [
               SocialButton(
                 isHovering: widget._isHovering[0],
-                onPress: () => js.context.callMethod(
-                    'open', ['https://www.facebook.com/renan.santos.92123']),
+                onPress: () => _launchInBrowser(
+                    'https://www.facebook.com/renan.santos.92123'),
                 onHover: (value) {
                   setState(() {
                     widget._isHovering[0] = value;
@@ -60,8 +73,7 @@ class _AboutDescState extends State<AboutDesc> {
               SizedBox(width: 20),
               SocialButton(
                 isHovering: widget._isHovering[1],
-                onPress: () => js.context
-                    .callMethod('open', ['https://github.com/renankanu']),
+                onPress: () => _launchInBrowser('https://github.com/renankanu'),
                 onHover: (value) {
                   setState(() {
                     widget._isHovering[1] = value;
@@ -72,8 +84,8 @@ class _AboutDescState extends State<AboutDesc> {
               SizedBox(width: 20),
               SocialButton(
                 isHovering: widget._isHovering[2],
-                onPress: () => js.context.callMethod(
-                    'open', ['https://www.linkedin.com/in/renansantosbr/']),
+                onPress: () => _launchInBrowser(
+                    'https://www.linkedin.com/in/renansantosbr/'),
                 onHover: (value) {
                   setState(() {
                     widget._isHovering[2] = value;

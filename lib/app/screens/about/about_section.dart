@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:port_dart/app/screens/about/components/about_desc.dart';
 import 'package:port_dart/app/screens/about/components/avatar.dart';
+import 'package:port_dart/app/screens/components/base_container.dart';
 import 'package:port_dart/app/utils/responsive.dart';
 
 import '../../utils/colors.dart';
@@ -15,11 +16,8 @@ class _AboutSectionState extends State<AboutSection> {
   List _isHovering = [false, false, false];
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 64),
-      constraints: BoxConstraints(
-          maxWidth: 960, minHeight: MediaQuery.of(context).size.height),
-      child: Padding(
+    return BaseContainer(
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Column(
           children: [
