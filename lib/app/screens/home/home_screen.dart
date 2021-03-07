@@ -6,7 +6,6 @@ import 'package:port_dart/app/screens/home/components/background_container.dart'
 import 'package:port_dart/app/screens/intro/intro_screen.dart';
 import 'package:port_dart/app/screens/skills/skill_section.dart';
 import 'package:port_dart/app/utils/colors.dart';
-import 'package:port_dart/app/utils/images.dart';
 import 'package:port_dart/app/utils/responsive.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final aboutKey = new GlobalKey();
-  List _isHovering = [false, false, false, false];
+  final skillKey = new GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -63,9 +62,12 @@ class _HomeScreenState extends State<HomeScreen> {
           : PreferredSize(
               preferredSize: Size(screenSize.width, 64),
               child: MyAppBar(
-                isHovering: _isHovering,
                 onPressAbout: () => Scrollable.ensureVisible(
                     aboutKey.currentContext,
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInOutQuart),
+                onPressSkill: () => Scrollable.ensureVisible(
+                    skillKey.currentContext,
                     duration: Duration(milliseconds: 500),
                     curve: Curves.easeInOutQuart),
               ),
@@ -85,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       IntroScreen(),
                       AboutSection(key: aboutKey),
-                      SkillSection(),
+                      SkillSection(key: skillKey),
                       new SizedBox(
                           height: 360.0,
                           width: double.infinity,

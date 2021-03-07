@@ -3,16 +3,17 @@ import 'package:port_dart/app/screens/components/menu_item.dart';
 import 'package:port_dart/app/utils/colors.dart';
 
 class MyAppBar extends StatefulWidget {
-  final List<dynamic> isHovering;
   final Function onPressAbout;
+  final Function onPressSkill;
 
-  const MyAppBar({Key key, this.isHovering, this.onPressAbout})
+  const MyAppBar({Key key, this.onPressAbout, this.onPressSkill})
       : super(key: key);
   @override
   _MyAppBarState createState() => _MyAppBarState();
 }
 
 class _MyAppBarState extends State<MyAppBar> {
+  List<bool> _isHovering = [false, false, false, false];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,41 +53,42 @@ class _MyAppBarState extends State<MyAppBar> {
                   title: 'Sobre',
                   onHolver: (value) {
                     setState(() {
-                      widget.isHovering[0] = value;
+                      _isHovering[0] = value;
                     });
                   },
-                  onPressAbout: widget.onPressAbout,
-                  isHolver: widget.isHovering[0],
+                  onPress: widget.onPressAbout,
+                  isHolver: _isHovering[0],
                 ),
                 SizedBox(width: 10),
                 MenuItem(
                   title: 'Skills',
                   onHolver: (value) {
                     setState(() {
-                      widget.isHovering[1] = value;
+                      _isHovering[1] = value;
                     });
                   },
-                  isHolver: widget.isHovering[1],
+                  onPress: widget.onPressSkill,
+                  isHolver: _isHovering[1],
                 ),
                 SizedBox(width: 10),
                 MenuItem(
                   title: 'Interesse',
                   onHolver: (value) {
                     setState(() {
-                      widget.isHovering[2] = value;
+                      _isHovering[2] = value;
                     });
                   },
-                  isHolver: widget.isHovering[2],
+                  isHolver: _isHovering[2],
                 ),
                 SizedBox(width: 10),
                 MenuItem(
                   title: 'Experiência',
                   onHolver: (value) {
                     setState(() {
-                      widget.isHovering[3] = value;
+                      _isHovering[3] = value;
                     });
                   },
-                  isHolver: widget.isHovering[3],
+                  isHolver: _isHovering[3],
                 ),
               ],
             )
