@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:port_dart/app/screens/intro/components/actions_terminal.dart';
 import 'package:port_dart/app/screens/intro/components/terminal.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:port_dart/app/utils/responsive.dart';
 
 import '../../utils/colors.dart';
-import '../../utils/colors.dart';
-import '../../utils/colors.dart';
-import '../../utils/colors.dart';
 
 class IntroScreen extends StatelessWidget {
+  const IntroScreen({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final Shader linearGradient = LinearGradient(

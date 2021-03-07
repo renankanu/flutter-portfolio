@@ -4,8 +4,10 @@ import 'package:port_dart/app/utils/colors.dart';
 
 class MyAppBar extends StatefulWidget {
   final List<dynamic> isHovering;
+  final Function onPressAbout;
 
-  const MyAppBar({Key key, this.isHovering}) : super(key: key);
+  const MyAppBar({Key key, this.isHovering, this.onPressAbout})
+      : super(key: key);
   @override
   _MyAppBarState createState() => _MyAppBarState();
 }
@@ -53,6 +55,7 @@ class _MyAppBarState extends State<MyAppBar> {
                       widget.isHovering[0] = value;
                     });
                   },
+                  onPressAbout: widget.onPressAbout,
                   isHolver: widget.isHovering[0],
                 ),
                 SizedBox(width: 10),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:port_dart/app/screens/about/about_section.dart';
 import 'package:port_dart/app/screens/components/my_appbar.dart';
 import 'package:port_dart/app/screens/components/my_drawer.dart';
+import 'package:port_dart/app/screens/home/components/background_container.dart';
 import 'package:port_dart/app/screens/intro/intro_screen.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:port_dart/app/utils/images.dart';
@@ -14,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  final dataKey = new GlobalKey();
+  final aboutKey = new GlobalKey();
   List _isHovering = [false, false, false, false];
 
   @override
@@ -59,22 +60,19 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             )
           : PreferredSize(
-              preferredSize: Size(screenSize.width, 1000),
+              preferredSize: Size(screenSize.width, 64),
               child: MyAppBar(
                 isHovering: _isHovering,
+                onPressAbout: () => Scrollable.ensureVisible(
+                    aboutKey.currentContext,
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInOutQuart),
               ),
             ),
       drawer: MyDrawer(),
       body: Stack(
         children: [
-          Container(
-            height: double.infinity,
-            width: double.infinity,
-            child: Image.asset(
-              MyImages.background,
-              fit: BoxFit.cover,
-            ),
-          ),
+          BackgroundContainer(),
           Align(
             alignment: Alignment.center,
             child: Container(
@@ -85,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     children: [
                       IntroScreen(),
-                      AboutSection(),
+                      AboutSection(key: aboutKey),
                       new SizedBox(
                           height: 360.0,
                           width: double.infinity,
@@ -99,10 +97,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: double.infinity,
                           child: new Card()),
                       // destination
-                      new Card(
-                        key: dataKey,
-                        child: new Text("data\n\n\n\n\n\ndata"),
-                      )
                       //                       Align(
                       //   alignment: Alignment.bottomCenter,
                       //   child: Container(

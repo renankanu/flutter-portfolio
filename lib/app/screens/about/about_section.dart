@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:port_dart/app/screens/about/components/about_desc.dart';
 import 'package:port_dart/app/screens/about/components/avatar.dart';
-import 'package:port_dart/app/screens/about/components/social_button.dart';
-import 'package:port_dart/app/utils/images.dart';
 import 'package:port_dart/app/utils/responsive.dart';
 
 import '../../utils/colors.dart';
 
 class AboutSection extends StatefulWidget {
+  const AboutSection({Key key}) : super(key: key);
   @override
   _AboutSectionState createState() => _AboutSectionState();
 }

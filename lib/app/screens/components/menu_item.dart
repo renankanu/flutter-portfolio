@@ -4,9 +4,11 @@ import 'package:port_dart/app/utils/colors.dart';
 class MenuItem extends StatefulWidget {
   final String title;
   final Function onHolver;
+  final Function onPressAbout;
   final bool isHolver;
 
-  const MenuItem({Key key, this.onHolver, this.isHolver, this.title})
+  const MenuItem(
+      {Key key, this.onHolver, this.isHolver, this.title, this.onPressAbout})
       : super(key: key);
   @override
   _MenuItemState createState() => _MenuItemState();
@@ -17,7 +19,7 @@ class _MenuItemState extends State<MenuItem> {
   Widget build(BuildContext context) {
     return InkWell(
       onHover: (value) => widget.onHolver(value),
-      onTap: () {},
+      onTap: widget.onPressAbout,
       child: Container(
         height: 30,
         child: Stack(
