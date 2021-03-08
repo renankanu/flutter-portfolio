@@ -9,6 +9,10 @@ class IntroScreen extends StatelessWidget {
   const IntroScreen({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final Shader linearGradient = LinearGradient(
+      colors: <Color>[MyColors.magicMint, MyColors.vistaBlue],
+    ).createShader(new Rect.fromLTWH(10.0, 100.0, 600.0, 100.0));
+
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
@@ -22,7 +26,7 @@ class IntroScreen extends StatelessWidget {
                   fontSize: ResponsiveWidget.isSmallScreen(context) ? 40 : 120,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'FiraCode',
-                  color: MyColors.magicMint),
+                  foreground: Paint()..shader = linearGradient),
             ),
             SizedBox(height: 60),
             Container(
