@@ -62,52 +62,46 @@ class _RepositorySectionState extends State<RepositorySection> {
                     result.data['viewer']['pinnedItems']['nodes'];
 
                 print(repositoriesPinned);
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    GridView.count(
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      crossAxisCount:
-                          ResponsiveWidget.isSmallScreen(context) ? 1 : 2,
-                      crossAxisSpacing: 40,
-                      mainAxisSpacing: 40,
-                      childAspectRatio:
-                          ResponsiveWidget.isSmallScreen(context) ? 1.9 : 2.8,
-                      children: List.generate(
-                        repositoriesPinned.length,
-                        (index) {
+                return Padding(
+                  padding: const EdgeInsets.only(top: 60),
+                  child: Column(
+                    children: [
+                      Wrap(
+                        runSpacing: 20,
+                        spacing: 20,
+                        children: repositoriesPinned.map((repo) {
+                          var index = repositoriesPinned.indexOf(repo);
                           return CardPinned(
                             repo: repositoriesPinned[index],
                           );
-                        },
+                        }).toList(),
                       ),
-                    ),
-                    SizedBox(height: 40),
-                    RichText(
-                      text: TextSpan(
-                        text: 'Total de commits -> ',
-                        style: TextStyle(
-                            color: MyColors.white,
-                            fontFamily: 'FiraCode',
-                            fontWeight: FontWeight.w200,
-                            fontSize: 20),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: result.data['viewer']
-                                    ['contributionsCollection']
-                                    ['totalCommitContributions']
-                                .toString(),
-                            style: TextStyle(
-                                color: MyColors.white,
-                                fontFamily: 'FiraCode',
-                                fontWeight: FontWeight.w600,
-                                fontSize: 20),
-                          )
-                        ],
+                      SizedBox(height: 40),
+                      RichText(
+                        text: TextSpan(
+                          text: 'Total de commits -> ',
+                          style: TextStyle(
+                              color: MyColors.white,
+                              fontFamily: 'FiraCode',
+                              fontWeight: FontWeight.w200,
+                              fontSize: 20),
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: result.data['viewer']
+                                      ['contributionsCollection']
+                                      ['totalCommitContributions']
+                                  .toString(),
+                              style: TextStyle(
+                                  color: MyColors.white,
+                                  fontFamily: 'FiraCode',
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 20),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 );
               },
             ),

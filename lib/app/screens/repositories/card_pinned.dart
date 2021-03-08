@@ -15,7 +15,6 @@ class CardPinned extends StatelessWidget {
           url,
           forceSafariVC: false,
           forceWebView: false,
-          headers: <String, String>{'my_header_key': 'my_header_value'},
         );
       } else {
         throw 'Could not launch $url';
@@ -23,6 +22,7 @@ class CardPinned extends StatelessWidget {
     }
 
     return Container(
+      constraints: BoxConstraints(maxWidth: 400),
       child: InkWell(
         onTap: () => _launchInBrowser(repo['url']),
         child: Card(
