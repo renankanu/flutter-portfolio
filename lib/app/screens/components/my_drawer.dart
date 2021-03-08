@@ -52,7 +52,7 @@ class _MyDrawerState extends State<MyDrawer> {
               SizedBox(height: 16),
               InkWell(
                 child: Text(
-                  'Interesse',
+                  'Repositórios',
                   style: TextStyle(
                       fontFamily: 'FiraCode',
                       color: MyColors.white,

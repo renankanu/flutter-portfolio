@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       client: client,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Renan Kanu',
         theme: ThemeData(),
         home: Center(
             child: Banner(

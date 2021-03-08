@@ -9,9 +9,6 @@ class IntroScreen extends StatelessWidget {
   const IntroScreen({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final Shader linearGradient = LinearGradient(
-      colors: <Color>[MyColors.magicMint, MyColors.white],
-    ).createShader(Rect.fromLTWH(100.0, 0.0, 600.0, 0.0));
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
@@ -22,10 +19,10 @@ class IntroScreen extends StatelessWidget {
             Text(
               '<Renan Kanu>',
               style: TextStyle(
-                  fontSize: ResponsiveWidget.isSmallScreen(context) ? 40 : 60,
+                  fontSize: ResponsiveWidget.isSmallScreen(context) ? 40 : 120,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'FiraCode',
-                  foreground: Paint()..shader = linearGradient),
+                  color: MyColors.magicMint),
             ),
             SizedBox(height: 60),
             Container(

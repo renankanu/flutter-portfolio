@@ -5,8 +5,10 @@ import 'package:port_dart/app/utils/colors.dart';
 class MyAppBar extends StatefulWidget {
   final Function onPressAbout;
   final Function onPressSkill;
+  final Function onPressRepo;
 
-  const MyAppBar({Key key, this.onPressAbout, this.onPressSkill})
+  const MyAppBar(
+      {Key key, this.onPressAbout, this.onPressSkill, this.onPressRepo})
       : super(key: key);
   @override
   _MyAppBarState createState() => _MyAppBarState();
@@ -72,12 +74,13 @@ class _MyAppBarState extends State<MyAppBar> {
                 ),
                 SizedBox(width: 10),
                 MenuItem(
-                  title: 'Interesse',
+                  title: 'Repositórios',
                   onHolver: (value) {
                     setState(() {
                       _isHovering[2] = value;
                     });
                   },
+                  onPress: widget.onPressRepo,
                   isHolver: _isHovering[2],
                 ),
                 SizedBox(width: 10),

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:port_dart/app/graphql/queries.dart';
+import 'package:port_dart/app/screens/components/base_container.dart';
+import 'package:port_dart/app/screens/repositories/card_pinned.dart';
+import 'package:port_dart/app/utils/colors.dart';
+import 'package:port_dart/app/utils/responsive.dart';
 
 class RepositorySection extends StatefulWidget {
   const RepositorySection({Key key}) : super(key: key);
@@ -12,35 +16,104 @@ class RepositorySection extends StatefulWidget {
 class _RepositorySectionState extends State<RepositorySection> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Query(
-          options: QueryOptions(document: gql(Queries.pinnedRepo)),
-          builder: (QueryResult result,
-              {VoidCallback refetch, FetchMore fetchMore}) {
-            if (result.hasException) {
-              return Text(result.exception.toString());
-            }
+    return BaseContainer(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Repos Favoritos',
+              style: TextStyle(
+                  fontFamily: 'FiraCode',
+                  fontSize: 36,
+                  fontWeight: FontWeight.w700,
+                  color: MyColors.vistaBlue),
+            ),
+            Container(
+              width: 80,
+              height: 6,
+              color: MyColors.magicMint,
+            ),
+            Query(
+              options: QueryOptions(document: gql(Queries.pinnedRepo)),
+              builder: (QueryResult result,
+                  {VoidCallback refetch, FetchMore fetchMore}) {
+                if (result.hasException) {
+                  return Text(result.exception.toString());
+                }
 
-            if (result.isLoading) {
-              return Text('Loading');
-            }
+                if (result.isLoading) {
+                  return Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 60),
+                      child: Text(
+                        'Carregando repositorios',
+                        style: TextStyle(
+                            fontSize: 22,
+                            color: MyColors.white,
+                            fontFamily: 'FiraCode'),
+                      ),
+                    ),
+                  );
+                }
 
-            List repositories = result.data['viewer']['pinnedItems']['nodes'];
+                List repositoriesPinned =
+                    result.data['viewer']['pinnedItems']['nodes'];
 
-            print(result.data['viewer']['pinnedItems']['nodes']);
-            print(repositories);
-            return ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: repositories.length,
-                itemBuilder: (context, index) {
-                  final repository = repositories[index];
-                  return Text(repository['name']);
-                });
-          },
+                print(repositoriesPinned);
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    GridView.count(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      crossAxisCount:
+                          ResponsiveWidget.isSmallScreen(context) ? 1 : 2,
+                      crossAxisSpacing: 40,
+                      mainAxisSpacing: 40,
+                      childAspectRatio:
+                          ResponsiveWidget.isSmallScreen(context) ? 1.9 : 2.8,
+                      children: List.generate(
+                        repositoriesPinned.length,
+                        (index) {
+                          return CardPinned(
+                            repo: repositoriesPinned[index],
+                          );
+                        },
+                      ),
+                    ),
+                    SizedBox(height: 40),
+                    RichText(
+                      text: TextSpan(
+                        text: 'Total de commits -> ',
+                        style: TextStyle(
+                            color: MyColors.white,
+                            fontFamily: 'FiraCode',
+                            fontWeight: FontWeight.w200,
+                            fontSize: 20),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: result.data['viewer']
+                                    ['contributionsCollection']
+                                    ['totalCommitContributions']
+                                .toString(),
+                            style: TextStyle(
+                                color: MyColors.white,
+                                fontFamily: 'FiraCode',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 20),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

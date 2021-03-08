@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final aboutKey = new GlobalKey();
   final skillKey = new GlobalKey();
+  final repoKey = new GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +72,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     skillKey.currentContext,
                     duration: Duration(milliseconds: 500),
                     curve: Curves.easeInOutQuart),
+                onPressRepo: () => Scrollable.ensureVisible(
+                    repoKey.currentContext,
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInOutQuart),
               ),
             ),
       drawer: MyDrawer(),
@@ -89,27 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       IntroScreen(),
                       AboutSection(key: aboutKey),
                       SkillSection(key: skillKey),
-                      RepositorySection(),
-                      new SizedBox(
-                          height: 360.0,
-                          width: double.infinity,
-                          child: new Card()),
-                      new SizedBox(
-                          height: 360.0,
-                          width: double.infinity,
-                          child: new Card()),
-                      // destination
-                      //                       Align(
-                      //   alignment: Alignment.bottomCenter,
-                      //   child: Container(
-                      //     height: 48,
-                      //     color: MyColors.white,
-                      //   ),
-                      //   // child: InkWell(
-                      //   //   onTap: () => Scrollable.ensureVisible(dataKey.currentContext),
-                      //   //   child: new Text("Scroll to data"),
-                      //   // ),
-                      // )
+                      RepositorySection(key: repoKey),
                     ],
                   ),
                 ),

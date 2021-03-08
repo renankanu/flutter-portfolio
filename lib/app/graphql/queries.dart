@@ -9,6 +9,7 @@ abstract class Queries {
                                         nodes {
                                           ... on Repository {
                                             name
+                                            url
                                             nameWithOwner
                                             description
                                             owner {
@@ -27,6 +28,7 @@ abstract class Queries {
                                         }
                                     }
                                     contributionsCollection {
+                                      totalCommitContributions
                                         contributionCalendar {
                                             totalContributions
                                         }
