@@ -26,9 +26,9 @@ class CardPinned extends StatelessWidget {
       child: InkWell(
         onTap: () => _launchInBrowser(repo['url']),
         child: Card(
-          shadowColor: Colors.white,
-          elevation: 1,
-          color: MyColors.menu.withOpacity(0.5),
+          shadowColor: MyColors.magicMint,
+          elevation: 5,
+          color: MyColors.mako,
           child: Padding(
             padding: const EdgeInsets.symmetric(
               vertical: 16,

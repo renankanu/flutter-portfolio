@@ -65,6 +65,7 @@ class _RepositorySectionState extends State<RepositorySection> {
                 return Padding(
                   padding: const EdgeInsets.only(top: 60),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Wrap(
                         runSpacing: 20,
