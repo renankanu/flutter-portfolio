@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:port_dart/app/screens/about/about_section.dart';
 import 'package:port_dart/app/screens/components/my_appbar.dart';
 import 'package:port_dart/app/screens/components/my_drawer.dart';
+import 'package:port_dart/app/screens/experience/experience_section.dart';
+import 'package:port_dart/app/screens/footer/footer.dart';
 import 'package:port_dart/app/screens/home/components/background_container.dart';
-import 'package:port_dart/app/screens/intro/intro_screen.dart';
+import 'package:port_dart/app/screens/intro/intro_section.dart';
 import 'package:port_dart/app/screens/repositories/repository_section.dart';
 import 'package:port_dart/app/screens/skills/skill_section.dart';
 import 'package:port_dart/app/utils/colors.dart';
@@ -19,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final aboutKey = new GlobalKey();
   final skillKey = new GlobalKey();
   final repoKey = new GlobalKey();
+  final xpKey = new GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +79,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     repoKey.currentContext,
                     duration: Duration(milliseconds: 500),
                     curve: Curves.easeInOutQuart),
+                onPressXp: () => Scrollable.ensureVisible(xpKey.currentContext,
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInOutQuart),
               ),
             ),
       drawer: MyDrawer(
@@ -98,13 +104,15 @@ class _HomeScreenState extends State<HomeScreen> {
               constraints: BoxConstraints(maxWidth: 1240),
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 60, top: 60),
+                  padding: const EdgeInsets.only(top: 60),
                   child: Column(
                     children: [
-                      IntroScreen(),
+                      IntroSection(),
                       AboutSection(key: aboutKey),
                       SkillSection(key: skillKey),
                       RepositorySection(key: repoKey),
+                      ExperienceSection(key: xpKey),
+                      BottomBar()
                     ],
                   ),
                 ),

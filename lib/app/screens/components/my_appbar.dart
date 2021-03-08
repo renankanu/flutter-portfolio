@@ -6,9 +6,14 @@ class MyAppBar extends StatefulWidget {
   final Function onPressAbout;
   final Function onPressSkill;
   final Function onPressRepo;
+  final Function onPressXp;
 
   const MyAppBar(
-      {Key key, this.onPressAbout, this.onPressSkill, this.onPressRepo})
+      {Key key,
+      this.onPressAbout,
+      this.onPressSkill,
+      this.onPressRepo,
+      this.onPressXp})
       : super(key: key);
   @override
   _MyAppBarState createState() => _MyAppBarState();
@@ -91,6 +96,7 @@ class _MyAppBarState extends State<MyAppBar> {
                       _isHovering[3] = value;
                     });
                   },
+                  onPress: widget.onPressXp,
                   isHolver: _isHovering[3],
                 ),
               ],

@@ -5,8 +5,8 @@ import 'package:port_dart/app/utils/responsive.dart';
 
 import '../../utils/colors.dart';
 
-class IntroScreen extends StatelessWidget {
-  const IntroScreen({Key key}) : super(key: key);
+class IntroSection extends StatelessWidget {
+  const IntroSection({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final Shader linearGradient = LinearGradient(

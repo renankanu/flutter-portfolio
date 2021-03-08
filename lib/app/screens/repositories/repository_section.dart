@@ -4,7 +4,6 @@ import 'package:port_dart/app/graphql/queries.dart';
 import 'package:port_dart/app/screens/components/base_container.dart';
 import 'package:port_dart/app/screens/repositories/card_pinned.dart';
 import 'package:port_dart/app/utils/colors.dart';
-import 'package:port_dart/app/utils/responsive.dart';
 
 class RepositorySection extends StatefulWidget {
   const RepositorySection({Key key}) : super(key: key);
