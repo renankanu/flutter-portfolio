@@ -78,7 +78,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     curve: Curves.easeInOutQuart),
               ),
             ),
-      drawer: MyDrawer(),
+      drawer: MyDrawer(
+        onPressAbout: () => Scrollable.ensureVisible(aboutKey.currentContext,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.easeInOutQuart),
+        onPressSkill: () => Scrollable.ensureVisible(skillKey.currentContext,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.easeInOutQuart),
+        onPressRepo: () => Scrollable.ensureVisible(repoKey.currentContext,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.easeInOutQuart),
+      ),
       body: Stack(
         children: [
           BackgroundContainer(),

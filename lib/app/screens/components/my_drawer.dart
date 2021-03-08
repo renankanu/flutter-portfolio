@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:port_dart/app/utils/colors.dart';
 
 class MyDrawer extends StatefulWidget {
+  final Function onPressAbout;
+  final Function onPressSkill;
+  final Function onPressRepo;
   const MyDrawer({
     Key key,
+    this.onPressAbout,
+    this.onPressSkill,
+    this.onPressRepo,
   }) : super(key: key);
 
   @override
@@ -31,6 +37,10 @@ class _MyDrawerState extends State<MyDrawer> {
               ),
               SizedBox(height: 40),
               InkWell(
+                onTap: () {
+                  Navigator.of(context).pop();
+                  widget.onPressAbout();
+                },
                 child: Text(
                   'Sobre',
                   style: TextStyle(
@@ -41,6 +51,10 @@ class _MyDrawerState extends State<MyDrawer> {
               ),
               SizedBox(height: 16),
               InkWell(
+                onTap: () {
+                  Navigator.of(context).pop();
+                  widget.onPressSkill();
+                },
                 child: Text(
                   'Skills',
                   style: TextStyle(
@@ -51,6 +65,10 @@ class _MyDrawerState extends State<MyDrawer> {
               ),
               SizedBox(height: 16),
               InkWell(
+                onTap: () {
+                  Navigator.of(context).pop();
+                  widget.onPressRepo();
+                },
                 child: Text(
                   'Repositórios',
                   style: TextStyle(
