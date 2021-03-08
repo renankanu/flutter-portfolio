@@ -4,6 +4,7 @@ import 'package:port_dart/app/screens/components/my_appbar.dart';
 import 'package:port_dart/app/screens/components/my_drawer.dart';
 import 'package:port_dart/app/screens/home/components/background_container.dart';
 import 'package:port_dart/app/screens/intro/intro_screen.dart';
+import 'package:port_dart/app/screens/repositories/repository_section.dart';
 import 'package:port_dart/app/screens/skills/skill_section.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:port_dart/app/utils/responsive.dart';
@@ -88,10 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       IntroScreen(),
                       AboutSection(key: aboutKey),
                       SkillSection(key: skillKey),
-                      new SizedBox(
-                          height: 360.0,
-                          width: double.infinity,
-                          child: new Card()),
+                      RepositorySection(),
                       new SizedBox(
                           height: 360.0,
                           width: double.infinity,
