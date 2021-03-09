@@ -37,7 +37,7 @@ class IconSkill extends StatelessWidget {
                 color: MyColors.magicMint,
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 9),
             Text(
               label,
               style: TextStyle(
