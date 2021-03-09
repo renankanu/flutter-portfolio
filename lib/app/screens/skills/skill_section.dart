@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:port_dart/app/screens/components/base_container.dart';
 import 'package:port_dart/app/screens/skills/components/icon_skill.dart';
 import 'package:port_dart/app/utils/colors.dart';
@@ -38,43 +39,47 @@ class SkillSection extends StatelessWidget {
                 runSpacing: 60,
                 children: <Widget>[
                   IconSkill(
-                    icon: MyImages.flutter,
+                    isPng: true,
+                    iconPng: MyImages.flutter,
+                    icon: FontAwesomeIcons.react,
                     label: 'Flutter',
                   ),
                   IconSkill(
-                    icon: MyImages.reactNative,
+                    icon: FontAwesomeIcons.react,
                     label: 'React Native',
                   ),
                   IconSkill(
-                    icon: MyImages.js,
+                    icon: FontAwesomeIcons.js,
                     label: 'JavaScript',
                   ),
                   IconSkill(
-                    icon: MyImages.ts,
+                    isPng: true,
+                    iconPng: MyImages.ts,
+                    icon: FontAwesomeIcons.react,
                     label: 'TypeScript',
                   ),
                   IconSkill(
-                    icon: MyImages.php,
+                    icon: FontAwesomeIcons.php,
                     label: 'Php',
                   ),
                   IconSkill(
-                    icon: MyImages.git,
+                    icon: FontAwesomeIcons.gitAlt,
                     label: 'Versionamento Git',
                   ),
                   IconSkill(
-                    icon: MyImages.googlePlay,
+                    icon: FontAwesomeIcons.googlePlay,
                     label: 'Google Play',
                   ),
                   IconSkill(
-                    icon: MyImages.appleStore,
+                    icon: FontAwesomeIcons.appStoreIos,
                     label: 'Apple Store',
                   ),
                   IconSkill(
-                    icon: MyImages.docker,
+                    icon: FontAwesomeIcons.docker,
                     label: 'Docker',
                   ),
                   IconSkill(
-                    icon: MyImages.aws,
+                    icon: FontAwesomeIcons.aws,
                     label: 'Aws',
                   ),
                 ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:port_dart/app/screens/about/about_section.dart';
 import 'package:port_dart/app/screens/components/my_appbar.dart';
 import 'package:port_dart/app/screens/components/my_drawer.dart';
@@ -34,10 +35,12 @@ class _HomeSectionState extends State<HomeSection> {
               leading: GestureDetector(
                 onTap: () => {_scaffoldKey.currentState.openDrawer()},
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  child: Image.asset(
-                    'assets/images/menu.png',
-                    height: 24,
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                  child: FaIcon(
+                    FontAwesomeIcons.bars,
+                    size: 24,
+                    color: MyColors.white,
                   ),
                 ),
               ),

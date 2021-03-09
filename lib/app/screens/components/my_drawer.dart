@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:port_dart/app/utils/colors.dart';
 
 class MyDrawer extends StatefulWidget {
@@ -32,9 +33,10 @@ class _MyDrawerState extends State<MyDrawer> {
             children: [
               GestureDetector(
                 onTap: () => Navigator.of(context).pop(),
-                child: Image.asset(
-                  'assets/images/close.png',
-                  height: 24,
+                child: FaIcon(
+                  FontAwesomeIcons.times,
+                  size: 24,
+                  color: MyColors.magicMint,
                 ),
               ),
               SizedBox(height: 40),
