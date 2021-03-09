@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:port_dart/app/utils/colors.dart';
-import 'package:port_dart/app/utils/responsive.dart';
 
 class BottomBar extends StatelessWidget {
   const BottomBar({

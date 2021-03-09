@@ -23,7 +23,11 @@ class IntroSection extends StatelessWidget {
             Text(
               '<Renan Kanu>',
               style: TextStyle(
-                  fontSize: ResponsiveWidget.isSmallScreen(context) ? 40 : 120,
+                  fontSize: ResponsiveWidget.isSmallScreen(context)
+                      ? 40
+                      : ResponsiveWidget.isMediumScreen(context)
+                          ? 80
+                          : 120,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'FiraCode',
                   foreground: Paint()..shader = linearGradient),

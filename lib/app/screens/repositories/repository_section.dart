@@ -60,7 +60,6 @@ class _RepositorySectionState extends State<RepositorySection> {
                 List repositoriesPinned =
                     result.data['viewer']['pinnedItems']['nodes'];
 
-                print(repositoriesPinned);
                 return Padding(
                   padding: const EdgeInsets.only(top: 60),
                   child: Column(
