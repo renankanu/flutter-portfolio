@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:port_dart/app/graphql/queries.dart';
 import 'package:port_dart/app/screens/components/base_container.dart';
@@ -78,20 +79,24 @@ class _RepositorySectionState extends State<RepositorySection> {
                       RichText(
                         text: TextSpan(
                           text: 'Total de commits -> ',
-                          style: TextStyle(
-                              color: MyColors.white,
-                              fontWeight: FontWeight.w200,
-                              fontSize: 20),
+                          style: GoogleFonts.firaCode(
+                            textStyle: TextStyle(
+                                color: MyColors.white, letterSpacing: .5),
+                          ),
                           children: <TextSpan>[
                             TextSpan(
                               text: result.data['viewer']
                                       ['contributionsCollection']
                                       ['totalCommitContributions']
                                   .toString(),
-                              style: TextStyle(
+                              style: GoogleFonts.firaCode(
+                                textStyle: TextStyle(
                                   color: MyColors.white,
+                                  letterSpacing: .5,
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 20),
+                                  fontSize: 20,
+                                ),
+                              ),
                             )
                           ],
                         ),
