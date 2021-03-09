@@ -11,12 +11,12 @@ import 'package:port_dart/app/screens/skills/skill_section.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:port_dart/app/utils/responsive.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeSection extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeSectionState createState() => _HomeSectionState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeSectionState extends State<HomeSection> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final aboutKey = new GlobalKey();
   final skillKey = new GlobalKey();
@@ -94,27 +94,34 @@ class _HomeScreenState extends State<HomeScreen> {
         onPressRepo: () => Scrollable.ensureVisible(repoKey.currentContext,
             duration: Duration(milliseconds: 500),
             curve: Curves.easeInOutQuart),
+        onPressXp: () => Scrollable.ensureVisible(xpKey.currentContext,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.easeInOutQuart),
       ),
       body: Stack(
         children: [
           BackgroundContainer(),
           Align(
             alignment: Alignment.center,
-            child: Container(
-              constraints: BoxConstraints(maxWidth: 1240),
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 60),
-                  child: Column(
-                    children: [
-                      IntroSection(),
-                      AboutSection(key: aboutKey),
-                      SkillSection(key: skillKey),
-                      RepositorySection(key: repoKey),
-                      ExperienceSection(key: xpKey),
-                      BottomBar()
-                    ],
-                  ),
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 60),
+                child: Column(
+                  children: [
+                    Container(
+                      constraints: BoxConstraints(maxWidth: 1240),
+                      child: Column(
+                        children: [
+                          IntroSection(),
+                          AboutSection(key: aboutKey),
+                          SkillSection(key: skillKey),
+                          RepositorySection(key: repoKey),
+                          ExperienceSection(key: xpKey),
+                        ],
+                      ),
+                    ),
+                    BottomBar()
+                  ],
                 ),
               ),
             ),

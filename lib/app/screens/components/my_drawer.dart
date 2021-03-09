@@ -5,11 +5,13 @@ class MyDrawer extends StatefulWidget {
   final Function onPressAbout;
   final Function onPressSkill;
   final Function onPressRepo;
+  final Function onPressXp;
   const MyDrawer({
     Key key,
     this.onPressAbout,
     this.onPressSkill,
     this.onPressRepo,
+    this.onPressXp,
   }) : super(key: key);
 
   @override
@@ -79,6 +81,10 @@ class _MyDrawerState extends State<MyDrawer> {
               ),
               SizedBox(height: 16),
               InkWell(
+                onTap: () {
+                  Navigator.of(context).pop();
+                  widget.onPressXp();
+                },
                 child: Text(
                   'Experiência',
                   style: TextStyle(

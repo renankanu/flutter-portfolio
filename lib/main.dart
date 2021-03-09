@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:port_dart/app/screens/home/home_screen.dart';
+import 'package:port_dart/app/screens/home/home_section.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           message: 'Flutter',
           color: MyColors.vistaBlue,
           location: BannerLocation.topEnd,
-          child: HomeScreen(),
+          child: HomeSection(),
         )),
       ),
     );
