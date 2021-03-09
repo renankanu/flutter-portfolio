@@ -19,12 +19,15 @@ class RowXp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          time,
-          style: TextStyle(
-            fontFamily: 'FiraCode',
-            color: MyColors.white,
-            fontSize: 11,
+        Container(
+          width: 200,
+          child: Text(
+            time,
+            style: TextStyle(
+              fontFamily: 'FiraCode',
+              color: MyColors.white,
+              fontSize: 11,
+            ),
           ),
         ),
         SizedBox(width: 24),
