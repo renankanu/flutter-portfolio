@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:port_dart/app/screens/components/base_container.dart';
+import 'package:port_dart/app/screens/experience/components/desc_xp.dart';
+import 'package:port_dart/app/screens/experience/components/dot.dart';
+import 'package:port_dart/app/screens/experience/components/row_xp.dart';
 import 'package:port_dart/app/utils/colors.dart';
 
 class ExperienceSection extends StatelessWidget {
@@ -25,7 +28,32 @@ class ExperienceSection extends StatelessWidget {
               height: 6,
               color: MyColors.magicMint,
             ),
-            Text('Trabalhos anteriores e atuais'),
+            SizedBox(height: 16),
+            Text(
+              'Trabalhos anteriores e atuais',
+              style: TextStyle(
+                fontFamily: 'FiraCode',
+                color: MyColors.white,
+              ),
+            ),
+            SizedBox(height: 60),
+            RowXp(
+              time: '2019 - atual',
+              ocupation: 'Mobile Developer',
+              company: 'MEGALEIOS',
+              itemXp: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  DescXp(
+                      label:
+                          '-> Desenvolvimento Mobile utilizando React Native e Flutter;'),
+                  DescXp(
+                      label: '-> Publicação dos APP nas lojas Android e iOS;'),
+                  DescXp(
+                      label: '-> Refatoração e implmentação de novas features;')
+                ],
+              ),
+            )
           ],
         ),
       ),
