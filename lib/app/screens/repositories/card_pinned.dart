@@ -53,7 +53,6 @@ class CardPinned extends StatelessWidget {
                     repo['description'],
                     style: TextStyle(
                       color: MyColors.white.withOpacity(0.8),
-                      fontFamily: 'FiraCode',
                       fontSize: 11,
                     ),
                   ),
@@ -75,7 +74,6 @@ class CardPinned extends StatelessWidget {
                       repo['primaryLanguage']['name'],
                       style: TextStyle(
                         color: MyColors.white.withOpacity(0.8),
-                        fontFamily: 'FiraCode',
                         fontSize: 11,
                       ),
                     ),

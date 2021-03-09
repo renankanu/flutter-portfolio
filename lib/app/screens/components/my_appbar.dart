@@ -39,7 +39,6 @@ class _MyAppBarState extends State<MyAppBar> {
                 text: '<Renan',
                 style: TextStyle(
                     color: MyColors.white,
-                    fontFamily: 'FiraCode',
                     fontWeight: FontWeight.w600,
                     fontSize: 26),
                 children: <TextSpan>[
@@ -47,7 +46,6 @@ class _MyAppBarState extends State<MyAppBar> {
                     text: 'Kanu>',
                     style: TextStyle(
                         color: MyColors.white,
-                        fontFamily: 'FiraCode',
                         fontWeight: FontWeight.w400,
                         fontSize: 26),
                   )

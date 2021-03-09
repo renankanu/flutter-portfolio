@@ -45,10 +45,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 },
                 child: Text(
                   'Sobre',
-                  style: TextStyle(
-                      fontFamily: 'FiraCode',
-                      color: MyColors.white,
-                      fontSize: 18),
+                  style: TextStyle(color: MyColors.white, fontSize: 18),
                 ),
               ),
               SizedBox(height: 16),
@@ -59,10 +56,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 },
                 child: Text(
                   'Skills',
-                  style: TextStyle(
-                      fontFamily: 'FiraCode',
-                      color: MyColors.white,
-                      fontSize: 18),
+                  style: TextStyle(color: MyColors.white, fontSize: 18),
                 ),
               ),
               SizedBox(height: 16),
@@ -73,10 +67,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 },
                 child: Text(
                   'Repositórios',
-                  style: TextStyle(
-                      fontFamily: 'FiraCode',
-                      color: MyColors.white,
-                      fontSize: 18),
+                  style: TextStyle(color: MyColors.white, fontSize: 18),
                 ),
               ),
               SizedBox(height: 16),
@@ -87,10 +78,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 },
                 child: Text(
                   'Experiência',
-                  style: TextStyle(
-                      fontFamily: 'FiraCode',
-                      color: MyColors.white,
-                      fontSize: 18),
+                  style: TextStyle(color: MyColors.white, fontSize: 18),
                 ),
               ),
               Expanded(

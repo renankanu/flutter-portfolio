@@ -20,7 +20,6 @@ class SkillSection extends StatelessWidget {
                 Text(
                   'Skills',
                   style: TextStyle(
-                      fontFamily: 'FiraCode',
                       fontSize: 48,
                       fontWeight: FontWeight.w700,
                       color: MyColors.vistaBlue),

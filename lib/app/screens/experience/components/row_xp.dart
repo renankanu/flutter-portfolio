@@ -25,7 +25,6 @@ class RowXp extends StatelessWidget {
                 child: Text(
                   time,
                   style: TextStyle(
-                    fontFamily: 'FiraCode',
                     color: MyColors.white,
                     fontSize: 11,
                   ),
@@ -74,7 +73,6 @@ class RowXp extends StatelessWidget {
                             Text(
                               company,
                               style: TextStyle(
-                                fontFamily: 'FiraCode',
                                 color: MyColors.white,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -83,7 +81,6 @@ class RowXp extends StatelessWidget {
                             Text(
                               ocupation,
                               style: TextStyle(
-                                fontFamily: 'FiraCode',
                                 color: MyColors.white,
                               ),
                             ),
@@ -105,7 +102,6 @@ class RowXp extends StatelessWidget {
                 child: Text(
                   time,
                   style: TextStyle(
-                    fontFamily: 'FiraCode',
                     color: MyColors.white,
                     fontSize: 11,
                   ),
@@ -158,7 +154,6 @@ class RowXp extends StatelessWidget {
                                 Text(
                                   company,
                                   style: TextStyle(
-                                    fontFamily: 'FiraCode',
                                     color: MyColors.white,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -167,7 +162,6 @@ class RowXp extends StatelessWidget {
                                 Text(
                                   ocupation,
                                   style: TextStyle(
-                                    fontFamily: 'FiraCode',
                                     color: MyColors.white,
                                   ),
                                 ),

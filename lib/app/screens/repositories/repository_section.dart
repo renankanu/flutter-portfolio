@@ -24,7 +24,6 @@ class _RepositorySectionState extends State<RepositorySection> {
             Text(
               'Repos Favoritos',
               style: TextStyle(
-                  fontFamily: 'FiraCode',
                   fontSize: 36,
                   fontWeight: FontWeight.w700,
                   color: MyColors.vistaBlue),
@@ -49,9 +48,9 @@ class _RepositorySectionState extends State<RepositorySection> {
                       child: Text(
                         'Carregando repositorios',
                         style: TextStyle(
-                            fontSize: 22,
-                            color: MyColors.white,
-                            fontFamily: 'FiraCode'),
+                          fontSize: 22,
+                          color: MyColors.white,
+                        ),
                       ),
                     ),
                   );
@@ -81,7 +80,6 @@ class _RepositorySectionState extends State<RepositorySection> {
                           text: 'Total de commits -> ',
                           style: TextStyle(
                               color: MyColors.white,
-                              fontFamily: 'FiraCode',
                               fontWeight: FontWeight.w200,
                               fontSize: 20),
                           children: <TextSpan>[
@@ -92,7 +90,6 @@ class _RepositorySectionState extends State<RepositorySection> {
                                   .toString(),
                               style: TextStyle(
                                   color: MyColors.white,
-                                  fontFamily: 'FiraCode',
                                   fontWeight: FontWeight.w600,
                                   fontSize: 20),
                             )

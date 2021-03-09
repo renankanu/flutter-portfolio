@@ -25,7 +25,6 @@ class IconSkill extends StatelessWidget {
           Text(
             label,
             style: TextStyle(
-                fontFamily: 'FiraCode',
                 fontSize: 18,
                 color: MyColors.white,
                 fontWeight: FontWeight.w400),

@@ -18,7 +18,6 @@ class ExperienceSection extends StatelessWidget {
             Text(
               'Experiências',
               style: TextStyle(
-                  fontFamily: 'FiraCode',
                   fontSize: 36,
                   fontWeight: FontWeight.w700,
                   color: MyColors.vistaBlue),
@@ -32,7 +31,6 @@ class ExperienceSection extends StatelessWidget {
             Text(
               'Trabalhos anteriores e atuais',
               style: TextStyle(
-                fontFamily: 'FiraCode',
                 color: MyColors.white,
               ),
             ),

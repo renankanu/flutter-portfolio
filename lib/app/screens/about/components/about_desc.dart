@@ -38,7 +38,6 @@ class _AboutDescState extends State<AboutDesc> {
           Text(
             'Olá, meu nome é Renan sou de Cianorte-PR. Comecei na programação em 2016 como desenvolvedor Android Nativo com Java, em 2018 comecei a programar Android Nativo com Kotlin, PHP e trabalhei com alguns serviços da AWS como: eC2, RDS, SNS, SES, S3... E no segundo semestre de 2019 comecei a programar em React Native e Flutter na Megaleios e estou até o momento.',
             style: TextStyle(
-              fontFamily: 'FiraCode',
               fontSize: 20,
               fontWeight: FontWeight.w400,
               color: MyColors.white,
@@ -48,7 +47,6 @@ class _AboutDescState extends State<AboutDesc> {
           Text(
             'Gosto de todos os assuntos que envolvem tecnologia, jogador de rugby, gosto de jogos eletrônicos, praticante de musculação e estudande de inglês. Café, café e café ☕',
             style: TextStyle(
-              fontFamily: 'FiraCode',
               fontSize: 16,
               fontWeight: FontWeight.w300,
               color: MyColors.white,

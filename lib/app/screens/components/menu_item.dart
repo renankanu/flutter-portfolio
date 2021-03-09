@@ -28,9 +28,8 @@ class _MenuItemState extends State<MenuItem> {
               child: Text(
                 widget.title,
                 style: TextStyle(
-                    color:
-                        widget.isHolver ? MyColors.vistaBlue : MyColors.white,
-                    fontFamily: 'FiraCode'),
+                  color: widget.isHolver ? MyColors.vistaBlue : MyColors.white,
+                ),
               ),
             ),
             Positioned.fill(

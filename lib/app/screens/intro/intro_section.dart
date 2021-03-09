@@ -29,7 +29,6 @@ class IntroSection extends StatelessWidget {
                           ? 80
                           : 120,
                   fontWeight: FontWeight.w600,
-                  fontFamily: 'FiraCode',
                   foreground: Paint()..shader = linearGradient),
             ),
             SizedBox(height: 60),
@@ -47,7 +46,6 @@ class IntroSection extends StatelessWidget {
                   'Desenvolvedor Mobile',
                   style: TextStyle(
                     color: MyColors.background,
-                    fontFamily: 'FiraCode',
                     fontWeight: FontWeight.w700,
                   ),
                 ),

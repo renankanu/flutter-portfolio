@@ -48,7 +48,6 @@ class _HomeSectionState extends State<HomeSection> {
                   text: '<Renan',
                   style: TextStyle(
                       color: MyColors.white,
-                      fontFamily: 'FiraCode',
                       fontWeight: FontWeight.w600,
                       fontSize: 26),
                   children: <TextSpan>[
@@ -56,7 +55,6 @@ class _HomeSectionState extends State<HomeSection> {
                       text: 'Kanu>',
                       style: TextStyle(
                           color: MyColors.white,
-                          fontFamily: 'FiraCode',
                           fontWeight: FontWeight.w400,
                           fontSize: 26),
                     )
@@ -120,7 +118,7 @@ class _HomeSectionState extends State<HomeSection> {
                         ],
                       ),
                     ),
-                    BottomBar()
+                    Footer()
                   ],
                 ),
               ),

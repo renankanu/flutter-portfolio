@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:port_dart/app/screens/home/home_section.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:url_strategy/url_strategy.dart';
@@ -34,7 +35,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Renan Kanu',
-        theme: ThemeData(),
+        theme: ThemeData(
+            textTheme: GoogleFonts.firaCodeTextTheme(
+          Theme.of(context).textTheme,
+        )),
         home: Center(
             child: Banner(
           message: 'Flutter',

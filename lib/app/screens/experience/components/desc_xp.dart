@@ -13,7 +13,6 @@ class DescXp extends StatelessWidget {
     return Text(
       label,
       style: TextStyle(
-        fontFamily: 'FiraCode',
         color: MyColors.white,
         fontSize: 12,
       ),

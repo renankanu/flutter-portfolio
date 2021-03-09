@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:port_dart/app/utils/colors.dart';
-import 'package:port_dart/app/utils/images.dart';
 
-class BottomBar extends StatefulWidget {
-  const BottomBar({
+class Footer extends StatefulWidget {
+  const Footer({
     Key key,
   }) : super(key: key);
 
   @override
-  _BottomBarState createState() => _BottomBarState();
+  _FooterState createState() => _FooterState();
 }
 
-class _BottomBarState extends State<BottomBar> with TickerProviderStateMixin {
+class _FooterState extends State<Footer> with TickerProviderStateMixin {
   AnimationController controller;
   Animation<double> animation;
 
@@ -39,46 +37,58 @@ class _BottomBarState extends State<BottomBar> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 80,
         color: MyColors.menu,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Copyright © ${DateTime.now().year} Renan Kanu',
-              style: TextStyle(fontFamily: 'FiraCode', color: MyColors.white),
-            ),
-            SizedBox(width: 100),
-            Text(
-              'Feito com Flutter 💙',
-              style: TextStyle(fontFamily: 'FiraCode', color: MyColors.white),
-            ),
-            // Container(
-            //   height: 80,
-            //   width: 80,
-            //   child: Stack(
-            //     children: [
-            //       PositionedTransition(
-            //         rect: relativeRectTween.animate(controller),
-            //         child: Container(
-            //           width: 20,
-            //           height: 20,
-            //           child: Container(
-            //             width: 20,
-            //             height: 20,
-            //             color: Colors.amber,
-            //             child: FaIcon(
-            //               FontAwesomeIcons.chevronUp,
-            //               color: MyColors.white,
-            //               size: 24,
-            //             ),
-            //           ),
-            //         ),
-            //       )
-            //     ],
-            //   ),
-            // )
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Text(
+                      'Copyright © ${DateTime.now().year} Renan Kanu',
+                      style: TextStyle(color: MyColors.white),
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Text(
+                      'Feito com Flutter 💙',
+                      style: TextStyle(color: MyColors.white),
+                    ),
+                  ),
+                ],
+              ),
+              // Container(
+              //   height: 80,
+              //   width: 80,
+              //   child: Stack(
+              //     children: [
+              //       PositionedTransition(
+              //         rect: relativeRectTween.animate(controller),
+              //         child: Container(
+              //           width: 20,
+              //           height: 20,
+              //           child: Container(
+              //             width: 20,
+              //             height: 20,
+              //             color: Colors.amber,
+              //             child: FaIcon(
+              //               FontAwesomeIcons.chevronUp,
+              //               color: MyColors.white,
+              //               size: 24,
+              //             ),
+              //           ),
+              //         ),
+              //       )
+              //     ],
+              //   ),
+              // )
+            ],
+          ),
         ));
   }
 }

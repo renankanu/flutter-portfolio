@@ -26,7 +26,6 @@ class Terminal extends StatelessWidget {
               text: TextSpan(
                 text: 'Kanu ',
                 style: TextStyle(
-                  fontFamily: 'FiraCode',
                   color: MyColors.texas,
                   fontWeight: FontWeight.w800,
                   fontSize: ResponsiveWidget.isSmallScreen(context) ? 15 : 30,
@@ -48,7 +47,6 @@ class Terminal extends StatelessWidget {
                   style: TextStyle(
                       fontSize:
                           ResponsiveWidget.isSmallScreen(context) ? 15 : 30,
-                      fontFamily: "FiraCode",
                       color: MyColors.white),
                 ),
                 TypewriterAnimatedTextKit(
@@ -61,7 +59,6 @@ class Terminal extends StatelessWidget {
                   textStyle: TextStyle(
                       fontSize:
                           ResponsiveWidget.isSmallScreen(context) ? 15 : 30,
-                      fontFamily: "FiraCode",
                       color: MyColors.white),
                   textAlign: TextAlign.start,
                 ),

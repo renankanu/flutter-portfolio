@@ -20,14 +20,19 @@ class _AboutSectionState extends State<AboutSection> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Sobre mim -----',
+              'Sobre mim',
               style: TextStyle(
-                  fontFamily: 'FiraCode',
                   fontSize: 36,
                   fontWeight: FontWeight.w600,
                   color: MyColors.vistaBlue),
+            ),
+            Container(
+              width: 80,
+              height: 6,
+              color: MyColors.magicMint,
             ),
             SizedBox(height: 80),
             Visibility(
