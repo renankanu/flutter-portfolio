@@ -91,7 +91,7 @@ class _RepositorySectionState extends State<RepositorySection> {
                                   .toString(),
                               style: GoogleFonts.firaCode(
                                 textStyle: TextStyle(
-                                  color: MyColors.white,
+                                  color: MyColors.vistaBlue,
                                   letterSpacing: .5,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 20,
