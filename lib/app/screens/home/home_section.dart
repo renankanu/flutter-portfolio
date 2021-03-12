@@ -11,6 +11,9 @@ import 'package:port_dart/app/screens/repositories/repository_section.dart';
 import 'package:port_dart/app/screens/skills/skill_section.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:port_dart/app/utils/responsive.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:port_dart/main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeSection extends StatefulWidget {
   @override
@@ -23,6 +26,13 @@ class _HomeSectionState extends State<HomeSection> {
   final skillKey = new GlobalKey();
   final repoKey = new GlobalKey();
   final xpKey = new GlobalKey();
+
+  _incrementCounter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int counter = (prefs.getInt('counter') ?? 0) + 1;
+    print('Pressed $counter times.');
+    await prefs.setInt('counter', counter);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -113,6 +123,28 @@ class _HomeSectionState extends State<HomeSection> {
                       constraints: BoxConstraints(maxWidth: 1240),
                       child: Column(
                         children: [
+                          Text(AppLocalizations.of(context).helloWorld),
+                          Column(
+                            children: [
+                              TextButton(
+                                child: Text("Set locale to German"),
+                                onPressed: () => MyApp.of(context).setLocale(
+                                    Locale.fromSubtags(languageCode: 'pt')),
+                              ),
+                              TextButton(
+                                child: Text("Set locale to English"),
+                                onPressed: () => MyApp.of(context).setLocale(
+                                    Locale.fromSubtags(languageCode: 'en')),
+                              ),
+                              TextButton(
+                                child: Text("Set locale to English"),
+                                onPressed: () {
+                                  print(MyApp.of(context).locale);
+                                  _incrementCounter();
+                                },
+                              ),
+                            ],
+                          ),
                           IntroSection(),
                           AboutSection(key: aboutKey),
                           SkillSection(key: skillKey),
