@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:port_dart/app/app_bloc.dart';
 import 'package:port_dart/app/screens/about/about_section.dart';
 import 'package:port_dart/app/screens/components/my_appbar.dart';
 import 'package:port_dart/app/screens/components/my_drawer.dart';
@@ -11,8 +14,6 @@ import 'package:port_dart/app/screens/repositories/repository_section.dart';
 import 'package:port_dart/app/screens/skills/skill_section.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:port_dart/app/utils/responsive.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:port_dart/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeSection extends StatefulWidget {
@@ -21,6 +22,7 @@ class HomeSection extends StatefulWidget {
 }
 
 class _HomeSectionState extends State<HomeSection> {
+  final _appBloc = Modular.get<AppBloc>();
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final aboutKey = new GlobalKey();
   final skillKey = new GlobalKey();
@@ -32,6 +34,12 @@ class _HomeSectionState extends State<HomeSection> {
     int counter = (prefs.getInt('counter') ?? 0) + 1;
     print('Pressed $counter times.');
     await prefs.setInt('counter', counter);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _appBloc.message;
   }
 
   @override
@@ -145,6 +153,25 @@ class _HomeSectionState extends State<HomeSection> {
                           //     ),
                           //   ],
                           // ),
+                          TextButton(
+                              onPressed: () {
+                                _appBloc.setMessage(
+                                    Locale.fromSubtags(languageCode: 'en'));
+                              },
+                              child: Text('Press me')),
+                          TextButton(
+                              onPressed: () {
+                                _appBloc.setMessage(
+                                    Locale.fromSubtags(languageCode: 'pt'));
+                              },
+                              child: Text('Press me PT')),
+                          StreamBuilder<Locale>(
+                              stream: _appBloc.message,
+                              initialData:
+                                  Locale.fromSubtags(languageCode: 'en'),
+                              builder: (context, snapshot) {
+                                return Text(snapshot.data.toString());
+                              }),
                           IntroSection(),
                           AboutSection(key: aboutKey),
                           SkillSection(key: skillKey),
