@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:port_dart/app/app_bloc.dart';
@@ -39,7 +38,7 @@ class _HomeSectionState extends State<HomeSection> {
   @override
   void initState() {
     super.initState();
-    _appBloc.message;
+    _appBloc.locale;
   }
 
   @override
@@ -131,47 +130,6 @@ class _HomeSectionState extends State<HomeSection> {
                       constraints: BoxConstraints(maxWidth: 1240),
                       child: Column(
                         children: [
-                          Text(AppLocalizations.of(context).helloWorld),
-                          // Column(
-                          //   children: [
-                          //     TextButton(
-                          //       child: Text("Set locale to German"),
-                          //       onPressed: () => MyApp.of(context).setLocale(
-                          //           Locale.fromSubtags(languageCode: 'pt')),
-                          //     ),
-                          //     TextButton(
-                          //       child: Text("Set locale to English"),
-                          //       onPressed: () => MyApp.of(context).setLocale(
-                          //           Locale.fromSubtags(languageCode: 'en')),
-                          //     ),
-                          //     TextButton(
-                          //       child: Text("Set locale to English"),
-                          //       onPressed: () {
-                          //         print(MyApp.of(context).locale);
-                          //         _incrementCounter();
-                          //       },
-                          //     ),
-                          //   ],
-                          // ),
-                          TextButton(
-                              onPressed: () {
-                                _appBloc.setMessage(
-                                    Locale.fromSubtags(languageCode: 'en'));
-                              },
-                              child: Text('Press me')),
-                          TextButton(
-                              onPressed: () {
-                                _appBloc.setMessage(
-                                    Locale.fromSubtags(languageCode: 'pt'));
-                              },
-                              child: Text('Press me PT')),
-                          StreamBuilder<Locale>(
-                              stream: _appBloc.message,
-                              initialData:
-                                  Locale.fromSubtags(languageCode: 'en'),
-                              builder: (context, snapshot) {
-                                return Text(snapshot.data.toString());
-                              }),
                           IntroSection(),
                           AboutSection(key: aboutKey),
                           SkillSection(key: skillKey),

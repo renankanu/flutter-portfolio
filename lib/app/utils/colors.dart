@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class MyColors {
+  static const transparente = Color(0x00FFFFFF);
   static const mako = Color(0xFF454650);
   static const background = Color(0xFF2D2E32);
   static const menu = Color(0xFF212225);

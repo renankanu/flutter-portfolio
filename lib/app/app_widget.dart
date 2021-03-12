@@ -5,11 +5,20 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:port_dart/app/app_bloc.dart';
 
-class AppWidget extends StatelessWidget {
+class AppWidget extends StatefulWidget {
+  @override
+  _AppWidgetState createState() => _AppWidgetState();
+}
+
+class _AppWidgetState extends State<AppWidget> {
+  final _appBloc = Modular.get<AppBloc>();
+
   final String token = DotEnv.env['GITHUB_TOKEN'];
 
   final HttpLink httpLink = HttpLink('https://api.github.com/graphql');
+
   @override
   Widget build(BuildContext context) {
     final AuthLink authLink = AuthLink(
@@ -23,27 +32,33 @@ class AppWidget extends StatelessWidget {
         link: link,
       ),
     );
-    return GraphQLProvider(
-      client: client,
-      child: MaterialApp(
-        localizationsDelegates: [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: [
-          const Locale('en', 'US'),
-          const Locale('pt', 'BR'),
-        ],
-        debugShowCheckedModeBanner: false,
-        title: 'Renan Kanu',
-        theme: ThemeData(
-          textTheme: GoogleFonts.firaCodeTextTheme(
-            Theme.of(context).textTheme,
-          ),
-        ),
-      ).modular(),
-    );
+    return StreamBuilder<Locale>(
+        stream: _appBloc.locale,
+        initialData: Locale.fromSubtags(languageCode: 'en'),
+        builder: (context, snapshot) {
+          return GraphQLProvider(
+            client: client,
+            child: MaterialApp(
+              locale: snapshot.data,
+              localizationsDelegates: [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: [
+                const Locale('en', 'US'),
+                const Locale('pt', 'BR'),
+              ],
+              debugShowCheckedModeBanner: false,
+              title: 'Renan Kanu',
+              theme: ThemeData(
+                textTheme: GoogleFonts.firaCodeTextTheme(
+                  Theme.of(context).textTheme,
+                ),
+              ),
+            ).modular(),
+          );
+        });
   }
 }

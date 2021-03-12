@@ -9,18 +9,18 @@ class AppBloc extends BlocBase {
   Sink<bool> get _isLoadingIn => _isLoading.sink;
   Stream<bool> get isLoading => _isLoading.stream;
 
-  final _message = BehaviorSubject<Locale>();
-  Sink<Locale> get _messageIn => _message.sink;
-  Stream<Locale> get message => _message.stream;
+  final _locale = BehaviorSubject<Locale>();
+  Sink<Locale> get _localeIn => _locale.sink;
+  Stream<Locale> get locale => _locale.stream;
 
   void setMessage(Locale message) {
-    _messageIn.add(message);
+    _localeIn.add(message);
   }
 
   @override
   void dispose() {
     _isLoading.close();
-    _message.close();
+    _locale.close();
     super.dispose();
   }
 }
