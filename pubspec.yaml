@@ -25,6 +25,7 @@ dependencies:
   google_fonts: ^1.1.2
   shared_preferences: ^0.5.12+4
   flutter_modular: ^3.0.1
+  rxdart: ^0.26.0
 
 dev_dependencies:
   flutter_test:
