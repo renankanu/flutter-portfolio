@@ -124,27 +124,27 @@ class _HomeSectionState extends State<HomeSection> {
                       child: Column(
                         children: [
                           Text(AppLocalizations.of(context).helloWorld),
-                          Column(
-                            children: [
-                              TextButton(
-                                child: Text("Set locale to German"),
-                                onPressed: () => MyApp.of(context).setLocale(
-                                    Locale.fromSubtags(languageCode: 'pt')),
-                              ),
-                              TextButton(
-                                child: Text("Set locale to English"),
-                                onPressed: () => MyApp.of(context).setLocale(
-                                    Locale.fromSubtags(languageCode: 'en')),
-                              ),
-                              TextButton(
-                                child: Text("Set locale to English"),
-                                onPressed: () {
-                                  print(MyApp.of(context).locale);
-                                  _incrementCounter();
-                                },
-                              ),
-                            ],
-                          ),
+                          // Column(
+                          //   children: [
+                          //     TextButton(
+                          //       child: Text("Set locale to German"),
+                          //       onPressed: () => MyApp.of(context).setLocale(
+                          //           Locale.fromSubtags(languageCode: 'pt')),
+                          //     ),
+                          //     TextButton(
+                          //       child: Text("Set locale to English"),
+                          //       onPressed: () => MyApp.of(context).setLocale(
+                          //           Locale.fromSubtags(languageCode: 'en')),
+                          //     ),
+                          //     TextButton(
+                          //       child: Text("Set locale to English"),
+                          //       onPressed: () {
+                          //         print(MyApp.of(context).locale);
+                          //         _incrementCounter();
+                          //       },
+                          //     ),
+                          //   ],
+                          // ),
                           IntroSection(),
                           AboutSection(key: aboutKey),
                           SkillSection(key: skillKey),
