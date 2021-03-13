@@ -34,7 +34,7 @@ class _AppWidgetState extends State<AppWidget> {
     );
     return StreamBuilder<Locale>(
         stream: _appBloc.locale,
-        initialData: Locale.fromSubtags(languageCode: 'en'),
+        initialData: Locale.fromSubtags(languageCode: 'pt'),
         builder: (context, snapshot) {
           return GraphQLProvider(
             client: client,
@@ -47,8 +47,8 @@ class _AppWidgetState extends State<AppWidget> {
                 GlobalCupertinoLocalizations.delegate,
               ],
               supportedLocales: [
-                const Locale('en', 'US'),
                 const Locale('pt', 'BR'),
+                const Locale('en', 'US'),
               ],
               debugShowCheckedModeBanner: false,
               title: 'Renan Kanu',

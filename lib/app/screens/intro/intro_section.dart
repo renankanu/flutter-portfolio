@@ -16,16 +16,11 @@ class IntroSection extends StatefulWidget {
 class _IntroSectionState extends State<IntroSection> {
   @override
   Widget build(BuildContext context) {
-    final Shader linearGradient = LinearGradient(
-      colors: <Color>[MyColors.magicMint, MyColors.vistaBlue],
-    ).createShader(new Rect.fromLTWH(10.0, 100.0, 600.0, 100.0));
-
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       child: Stack(
         children: [
-          // Flags(appBloc: _appBloc),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -33,13 +28,14 @@ class _IntroSectionState extends State<IntroSection> {
                 Text(
                   '<Renan Kanu>',
                   style: TextStyle(
-                      fontSize: ResponsiveWidget.isSmallScreen(context)
-                          ? 40
-                          : ResponsiveWidget.isMediumScreen(context)
-                              ? 80
-                              : 120,
-                      fontWeight: FontWeight.w600,
-                      foreground: Paint()..shader = linearGradient),
+                    fontSize: ResponsiveWidget.isSmallScreen(context)
+                        ? 40
+                        : ResponsiveWidget.isMediumScreen(context)
+                            ? 80
+                            : 120,
+                    fontWeight: FontWeight.w600,
+                    color: MyColors.magicMint,
+                  ),
                 ),
                 SizedBox(height: 60),
                 Container(

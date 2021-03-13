@@ -28,17 +28,17 @@ class _HomeSectionState extends State<HomeSection> {
   final repoKey = new GlobalKey();
   final xpKey = new GlobalKey();
 
-  _incrementCounter() async {
+  _initLocale() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    int counter = (prefs.getInt('counter') ?? 0) + 1;
-    print('Pressed $counter times.');
-    await prefs.setInt('counter', counter);
+    String locale = prefs.getString('locale') ?? 'pt';
+
+    _appBloc.setMessage(Locale.fromSubtags(languageCode: '$locale'));
   }
 
   @override
   void initState() {
     super.initState();
-    _appBloc.locale;
+    _initLocale();
   }
 
   @override
