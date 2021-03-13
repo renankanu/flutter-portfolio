@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:port_dart/app/graphql/queries.dart';
-import 'package:port_dart/app/screens/components/base_container.dart';
+import 'package:port_dart/app/components/base_container.dart';
 import 'package:port_dart/app/screens/repositories/card_pinned.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:port_dart/app/screens/components/menu_item.dart';
+import 'package:port_dart/app/components/menu_item.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

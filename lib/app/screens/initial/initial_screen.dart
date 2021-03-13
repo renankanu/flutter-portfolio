@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:port_dart/app/app_bloc.dart';
-import 'package:port_dart/app/screens/components/flags.dart';
+import 'package:port_dart/app/components/flags.dart';
 import 'package:port_dart/app/screens/home/home_section.dart';
 import 'package:port_dart/app/utils/colors.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:port_dart/app/screens/components/base_container.dart';
+import 'package:port_dart/app/components/base_container.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:port_dart/app/screens/experience/components/desc_xp.dart';
 import 'package:port_dart/app/screens/experience/components/row_xp.dart';

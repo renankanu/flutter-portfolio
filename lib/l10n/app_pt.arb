@@ -25,5 +25,15 @@
     "oldExpSeven": "-> Usuário Linux (GNU / Linux Ubuntu);",
     "copyright": "Copyright ©",
     "renanKanu": "Renan Kanu",
-    "madeFlutter": "Feito com Flutter 💙"
+    "madeFlutter": "Feito com Flutter 💙",
+    "flutterSkill": "Projetar e desenvolver aplicativos, escreva um código limpo, integrar com API Rest, com corrigir bugs, utilizando modular, bloc e bitrise para CI/CD",
+    "rnSkill": "Projetar e desenvolver aplicativos com JavaScript/TypeScript, trabalhando com Redux, Styled Component, integrar com serviços externos",
+    "jsSkill": "es6, declarações de função e arrow functions, template literals, condições curtas: &&, ||, operador ternário, métodos de array: .map (), .filter (), .reduce (), sintaxe promises + Async/Await, Hooks",
+    "tsSkill": "Tipos de dados, classes e objetos, modificadores de acesso, construtor, métodos, herança, módulos",
+    "phpSkill": "Ddd com PHP, aplicação para back end API Rest, dockerize aplicação, teste unitários",
+    "gitSkill": "Ignorando arquivos no Git, rever a história do repositório, staging, resolver merge, stash mudanças uncommitted, logs",
+    "googlePlaySkill": "APP configuration for the store and publication",
+    "appleStoreSkill": "Configuração do APP para a loja, TestFlight e publicação",
+    "dockerSkill": "Administração de containers com docker",
+    "awsSkill": "Conhecimento em alguns serviços como: eC2, SES, SNS, SQS, Route53, Lambda, RDS e S3"
 }
