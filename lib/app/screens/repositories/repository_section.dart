@@ -5,6 +5,7 @@ import 'package:port_dart/app/graphql/queries.dart';
 import 'package:port_dart/app/screens/components/base_container.dart';
 import 'package:port_dart/app/screens/repositories/card_pinned.dart';
 import 'package:port_dart/app/utils/colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RepositorySection extends StatefulWidget {
   const RepositorySection({Key key}) : super(key: key);
@@ -23,7 +24,7 @@ class _RepositorySectionState extends State<RepositorySection> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Repos Favoritos',
+              AppLocalizations.of(context).favoriteRepo,
               style: TextStyle(
                   fontSize: 36,
                   fontWeight: FontWeight.w700,
@@ -47,7 +48,7 @@ class _RepositorySectionState extends State<RepositorySection> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 60),
                       child: Text(
-                        'Carregando repositorios',
+                        AppLocalizations.of(context).loadingRepo,
                         style: TextStyle(
                           fontSize: 22,
                           color: MyColors.white,
@@ -78,7 +79,7 @@ class _RepositorySectionState extends State<RepositorySection> {
                       SizedBox(height: 40),
                       RichText(
                         text: TextSpan(
-                          text: 'Total de commits -> ',
+                          text: '${AppLocalizations.of(context).totalCommits} ',
                           style: GoogleFonts.firaCode(
                             textStyle: TextStyle(
                                 color: MyColors.white, letterSpacing: .5),

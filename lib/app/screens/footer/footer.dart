@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:port_dart/app/utils/colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Footer extends StatefulWidget {
   const Footer({
@@ -48,7 +49,7 @@ class _FooterState extends State<Footer> with TickerProviderStateMixin {
                   Padding(
                     padding: const EdgeInsets.only(left: 8),
                     child: Text(
-                      'Copyright © ${DateTime.now().year} Renan Kanu',
+                      '${AppLocalizations.of(context).copyright} ${DateTime.now().year} ${AppLocalizations.of(context).renanKanu}',
                       style: TextStyle(color: MyColors.white),
                     ),
                   ),
@@ -56,7 +57,7 @@ class _FooterState extends State<Footer> with TickerProviderStateMixin {
                   Padding(
                     padding: const EdgeInsets.only(left: 8),
                     child: Text(
-                      'Feito com Flutter 💙',
+                      AppLocalizations.of(context).madeFlutter,
                       style: TextStyle(color: MyColors.white),
                     ),
                   ),

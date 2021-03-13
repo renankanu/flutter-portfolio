@@ -1,10 +1,29 @@
 {
-  "helloWorld": "Hello World!",
   "mobileDeveloper": "Mobile Developer",
+  "about": "About",
   "aboutMe": "About Me",
   "aboutMeDescOne": "Hello, my name is Renan, I'm from Cianorte-PR. I started programming in 2016 as a Native Android developer with Java, in 2018 I started programming Android Native with Kotlin, PHP and worked with some AWS services such as: eC2, RDS, SNS, SES, S3 ... And in the second half of 2019 I started programming in React Native and Flutter at Megaleios and I am so far.",
   "aboutMeDescTwo": "I like all subjects that involve technology, rugby player, I like electronic games, bodybuilder and English student. Coffee, coffee and coffee ☕",
-  "@helloWorld": {
-    "description": "The conventional newborn programmer greeting"
-  }
+  "experience": "Experience",
+  "repository": "Repositories",
+  "favoriteRepo": "Favorite Repositories",
+  "loadingRepo": "Loading repositories",
+  "totalCommits": "Total commits ->",
+  "prevCurrentWork": "Previous and current work",
+  "actualWorkDate": "Sept. 2019 - current",
+  "expMegaOne": "-> Mobile development using React Native and Flutter;",
+  "expMegaTwo": "-> Publication of APPs on Android and iOS stores;",
+  "expMegaThree": "-> Refactoring and implementation of new features;",
+  "oldWork": "Jul. 2016 - Sept. 2019",
+  "fullStack": "FullStack",
+  "oldExpOne": "-> Development of native Android applications (Java and Kotlin);",
+  "oldExpTwo": "-> Development of applications in PHP using DDD for back-end;",
+  "oldExpThree": "-> Using REST APIs;",
+  "oldExpFour": "-> Version control with GIT;",
+  "oldExpFive": "-> Knowledge in Docker;",
+  "oldExpSix": "-> Knowledge in AWS (Lambda, SNS, SQS, SES, EC2, RDS, S3);",
+  "oldExpSeven": "-> Linux user (GNU / Linux Ubuntu);",
+  "copyright": "Copyright ©",
+  "renanKanu": "Renan Kanu",
+  "madeFlutter": "Made with Flutter 💙"
 }

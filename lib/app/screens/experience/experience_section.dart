@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:port_dart/app/screens/components/base_container.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:port_dart/app/screens/experience/components/desc_xp.dart';
 import 'package:port_dart/app/screens/experience/components/row_xp.dart';
 import 'package:port_dart/app/utils/colors.dart';
@@ -16,7 +17,7 @@ class ExperienceSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Experiências',
+              AppLocalizations.of(context).experience,
               style: TextStyle(
                   fontSize: 36,
                   fontWeight: FontWeight.w700,
@@ -29,60 +30,50 @@ class ExperienceSection extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              'Trabalhos anteriores e atuais',
+              AppLocalizations.of(context).prevCurrentWork,
               style: TextStyle(
                 color: MyColors.white,
               ),
             ),
             SizedBox(height: 60),
             RowXp(
-              time: 'Set. de 2019 - atual',
-              ocupation: 'Mobile Developer',
+              time: AppLocalizations.of(context).actualWorkDate,
+              ocupation: AppLocalizations.of(context).mobileDeveloper,
               company: 'MEGALEIOS',
               itemXp: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  DescXp(
-                      label:
-                          '-> Desenvolvimento Mobile utilizando React Native e Flutter;'),
+                  DescXp(label: AppLocalizations.of(context).expMegaOne),
                   SizedBox(height: 6),
-                  DescXp(
-                      label: '-> Publicação dos APP nas lojas Android e iOS;'),
+                  DescXp(label: AppLocalizations.of(context).expMegaTwo),
                   SizedBox(height: 6),
-                  DescXp(
-                      label:
-                          '-> Refatoração e implmentação de novas features;'),
+                  DescXp(label: AppLocalizations.of(context).expMegaThree),
                   SizedBox(height: 6),
                 ],
               ),
             ),
             SizedBox(height: 24),
             RowXp(
-              time: 'Jul. de 2016 - Set. de 2019',
-              ocupation: 'Mobile Developer / FullStack',
+              time: AppLocalizations.of(context).oldWork,
+              ocupation:
+                  '${AppLocalizations.of(context).mobileDeveloper} / ${AppLocalizations.of(context).fullStack}',
               company: 'SISTERRA',
               itemXp: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  DescXp(
-                      label:
-                          '-> Desenvolvimento de aplicativos para Android nativo (Java e Kotlin);'),
+                  DescXp(label: AppLocalizations.of(context).oldExpOne),
                   SizedBox(height: 6),
-                  DescXp(
-                      label:
-                          '-> Desenvolvimento de aplicações em PHP utilizando DDD para back-end;'),
+                  DescXp(label: AppLocalizations.of(context).oldExpTwo),
                   SizedBox(height: 6),
-                  DescXp(label: '-> Usando APIs REST;'),
+                  DescXp(label: AppLocalizations.of(context).oldExpThree),
                   SizedBox(height: 6),
-                  DescXp(label: '-> Controle de versão com GIT;'),
+                  DescXp(label: AppLocalizations.of(context).oldExpFour),
                   SizedBox(height: 6),
-                  DescXp(label: '-> Conhecimento em Docker;'),
+                  DescXp(label: AppLocalizations.of(context).oldExpFive),
                   SizedBox(height: 6),
-                  DescXp(
-                      label:
-                          '-> Conhecimento em AWS (Lambda, SNS, SQS, SES, EC2, RDS, S3);'),
+                  DescXp(label: AppLocalizations.of(context).oldExpSix),
                   SizedBox(height: 6),
-                  DescXp(label: '-> Usuário Linux (GNU / Linux Ubuntu);'),
+                  DescXp(label: AppLocalizations.of(context).oldExpSeven),
                   SizedBox(height: 6),
                 ],
               ),
