@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:port_dart/app/app_bloc.dart';
-import 'package:port_dart/app/screens/components/custom_image.dart';
+import 'package:port_dart/app/screens/components/flags.dart';
+
 import 'package:port_dart/app/screens/intro/components/terminal.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:port_dart/app/utils/responsive.dart';
@@ -17,7 +18,6 @@ class IntroSection extends StatefulWidget {
 }
 
 class _IntroSectionState extends State<IntroSection> {
-  final _appBloc = Modular.get<AppBloc>();
   @override
   Widget build(BuildContext context) {
     final Shader linearGradient = LinearGradient(
@@ -29,88 +29,7 @@ class _IntroSectionState extends State<IntroSection> {
       width: MediaQuery.of(context).size.width,
       child: Stack(
         children: [
-          Column(
-            children: [
-              Text(AppLocalizations.of(context).helloWorld),
-              StreamBuilder<Locale>(
-                stream: _appBloc.locale,
-                builder: (context, snapshot) {
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          _appBloc.setMessage(
-                              Locale.fromSubtags(languageCode: 'pt'));
-                        },
-                        child: Stack(
-                          children: [
-                            Align(
-                              alignment: Alignment.center,
-                              child: Padding(
-                                padding: const EdgeInsets.all(1),
-                                child: Container(
-                                  height: 24,
-                                  width: 36,
-                                  child: CustomImageNetwork(
-                                    imageUrl:
-                                        'https://cdn.jsdelivr.net/npm/country-flags@0.0.2/flags/brazil.gif',
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Positioned.fill(
-                              child: Container(
-                                color: snapshot.data.toString() == 'pt'
-                                    ? MyColors.transparente
-                                    : MyColors.background.withOpacity(0.8),
-                                height: 24,
-                                width: 38,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 8),
-                      InkWell(
-                        onTap: () {
-                          _appBloc.setMessage(
-                              Locale.fromSubtags(languageCode: 'en'));
-                        },
-                        child: Stack(
-                          children: [
-                            Align(
-                              alignment: Alignment.center,
-                              child: Padding(
-                                padding: const EdgeInsets.all(1),
-                                child: Container(
-                                  height: 24,
-                                  width: 36,
-                                  child: CustomImageNetwork(
-                                    imageUrl:
-                                        'https://cdn.jsdelivr.net/npm/country-flags@0.0.2/flags/united_states_of_america.gif',
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Positioned.fill(
-                              child: Container(
-                                color: snapshot.data.toString() != 'pt'
-                                    ? MyColors.transparente
-                                    : MyColors.background.withOpacity(0.8),
-                                height: 24,
-                                width: 38,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              ),
-            ],
-          ),
+          // Flags(appBloc: _appBloc),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
