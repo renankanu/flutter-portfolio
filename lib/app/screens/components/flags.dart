@@ -22,8 +22,8 @@ class Flags extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                height: 24,
-                width: 36,
+                height: 20,
+                width: 29,
                 child: Material(
                   child: InkWell(
                     onTap: () {
@@ -36,13 +36,8 @@ class Flags extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Padding(
                             padding: const EdgeInsets.all(1),
-                            child: Container(
-                              height: 24,
-                              width: 36,
-                              child: CustomImageNetwork(
-                                imageUrl:
-                                    'https://cdn.jsdelivr.net/npm/country-flags@0.0.2/flags/brazil.gif',
-                              ),
+                            child: CustomImageNetwork(
+                              imageUrl: 'https://flagcdn.com/h20/br.png',
                             ),
                           ),
                         ),
@@ -51,8 +46,6 @@ class Flags extends StatelessWidget {
                             color: snapshot.data.toString() == 'pt'
                                 ? MyColors.transparente
                                 : MyColors.background.withOpacity(0.8),
-                            height: 24,
-                            width: 38,
                           ),
                         ),
                       ],
@@ -62,7 +55,7 @@ class Flags extends StatelessWidget {
               ),
               SizedBox(width: 8),
               Container(
-                height: 19.99,
+                height: 20,
                 width: 38,
                 child: Material(
                   child: InkWell(
@@ -76,13 +69,8 @@ class Flags extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Padding(
                             padding: const EdgeInsets.all(1),
-                            child: Container(
-                              height: 19.99,
-                              width: 38,
-                              child: CustomImageNetwork(
-                                imageUrl:
-                                    'https://cdn.jsdelivr.net/npm/country-flags@0.0.2/flags/united_states_of_america.gif',
-                              ),
+                            child: CustomImageNetwork(
+                              imageUrl: 'https://flagcdn.com/h20/us.png',
                             ),
                           ),
                         ),
@@ -91,8 +79,6 @@ class Flags extends StatelessWidget {
                             color: snapshot.data.toString() != 'pt'
                                 ? MyColors.transparente
                                 : MyColors.background.withOpacity(0.8),
-                            height: 19.99,
-                            width: 38,
                           ),
                         ),
                       ],

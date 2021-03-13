@@ -27,7 +27,7 @@ class _AboutSectionState extends State<AboutSection> {
               AppLocalizations.of(context).aboutMe,
               style: TextStyle(
                   fontSize: 36,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w700,
                   color: MyColors.vistaBlue),
             ),
             Container(
