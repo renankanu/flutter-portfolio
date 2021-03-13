@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:port_dart/app/app_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:port_dart/app/screens/components/custom_image.dart';
 import 'package:port_dart/app/screens/intro/components/terminal.dart';
 import 'package:port_dart/app/utils/colors.dart';
-import 'package:port_dart/app/utils/images.dart';
 import 'package:port_dart/app/utils/responsive.dart';
 
 import '../../utils/colors.dart';
@@ -139,7 +138,7 @@ class _IntroSectionState extends State<IntroSection> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 24, vertical: 12),
                     child: Text(
-                      'Desenvolvedor Mobile',
+                      AppLocalizations.of(context).mobileDeveloper,
                       style: TextStyle(
                         color: MyColors.background,
                         fontWeight: FontWeight.w700,

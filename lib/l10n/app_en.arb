@@ -1,5 +1,9 @@
 {
   "helloWorld": "Hello World!",
+  "mobileDeveloper": "Mobile Developer",
+  "aboutMe": "About Me",
+  "aboutMeDescOne": "Hello, my name is Renan, I'm from Cianorte-PR. I started programming in 2016 as a Native Android developer with Java, in 2018 I started programming Android Native with Kotlin, PHP and worked with some AWS services such as: eC2, RDS, SNS, SES, S3 ... And in the second half of 2019 I started programming in React Native and Flutter at Megaleios and I am so far.",
+  "aboutMeDescTwo": "I like all subjects that involve technology, rugby player, I like electronic games, bodybuilder and English student. Coffee, coffee and coffee ☕",
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
   }
