@@ -41,7 +41,7 @@ class CustomModal {
         );
       },
       context: context,
-      barrierColor: Colors.black54,
+      barrierColor: MyColors.menu.withOpacity(0.9),
       barrierDismissible: true,
       barrierLabel: '',
       pageBuilder: (BuildContext context, Animation animation,
@@ -56,8 +56,7 @@ class CustomModal {
                 horizontal: 20,
               ),
               child: Container(
-                constraints: BoxConstraints(
-                    minWidth: 150, maxWidth: 200, minHeight: 150),
+                constraints: BoxConstraints(maxWidth: 300, minHeight: 150),
                 child: bodyModal,
               ),
             ),

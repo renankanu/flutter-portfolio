@@ -7,41 +7,49 @@ import 'package:port_dart/app/screens/skills/components/icon_skill.dart';
 import 'package:port_dart/app/screens/skills/components/modal_skill.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:port_dart/app/utils/images.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SkillSection extends StatelessWidget {
   void openModal(BuildContext context, TypeSkill skill) {
-    SkillDescription _nameSkill = getSkill(skill);
+    SkillDescription _nameSkill = getSkill(context, skill);
     CustomModal.animateModal(
       context,
       bodyModal: ModalSkill(
         title: _nameSkill.title,
-        description: 'asa',
+        description: _nameSkill.description,
       ),
     );
   }
 
-  SkillDescription getSkill(TypeSkill type) {
+  SkillDescription getSkill(BuildContext context, TypeSkill type) {
     switch (type) {
       case TypeSkill.flutter:
-        return SkillDescription('Flutter', '');
+        return SkillDescription(
+            'Flutter', AppLocalizations.of(context).flutterSkill);
       case TypeSkill.rn:
-        return SkillDescription('React Native', '');
+        return SkillDescription(
+            'React Native', AppLocalizations.of(context).rnSkill);
       case TypeSkill.js:
-        return SkillDescription('JavaScript', '');
+        return SkillDescription(
+            'JavaScript', AppLocalizations.of(context).jsSkill);
       case TypeSkill.ts:
-        return SkillDescription('TypeScript', '');
+        return SkillDescription(
+            'TypeScript', AppLocalizations.of(context).tsSkill);
       case TypeSkill.php:
-        return SkillDescription('PHP', '');
+        return SkillDescription('PHP', AppLocalizations.of(context).phpSkill);
       case TypeSkill.git:
-        return SkillDescription('Git', '');
+        return SkillDescription('Git', AppLocalizations.of(context).gitSkill);
       case TypeSkill.googlePlay:
-        return SkillDescription('Google Play', '');
+        return SkillDescription(
+            'Google Play', AppLocalizations.of(context).googlePlaySkill);
       case TypeSkill.appleStore:
-        return SkillDescription('Apple Store', '');
+        return SkillDescription(
+            'Apple Store', AppLocalizations.of(context).googlePlaySkill);
       case TypeSkill.docker:
-        return SkillDescription('Docker', '');
+        return SkillDescription(
+            'Docker', AppLocalizations.of(context).dockerSkill);
       case TypeSkill.aws:
-        return SkillDescription('Aws', '');
+        return SkillDescription('Aws', AppLocalizations.of(context).awsSkill);
       default:
         return SkillDescription('', '');
     }
@@ -119,8 +127,11 @@ class SkillSection extends StatelessWidget {
                     label: 'Php',
                   ),
                   IconSkill(
+                    onPress: () {
+                      openModal(context, TypeSkill.git);
+                    },
                     icon: FontAwesomeIcons.gitAlt,
-                    label: 'Versionamento Git',
+                    label: 'Git',
                   ),
                   IconSkill(
                     onPress: () {

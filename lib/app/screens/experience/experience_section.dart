@@ -6,7 +6,8 @@ import 'package:port_dart/app/screens/experience/components/row_xp.dart';
 import 'package:port_dart/app/utils/colors.dart';
 
 class ExperienceSection extends StatelessWidget {
-  const ExperienceSection({Key key}) : super(key: key);
+  final double pixels;
+  const ExperienceSection({Key key, this.pixels}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,23 +17,36 @@ class ExperienceSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              AppLocalizations.of(context).experience,
-              style: TextStyle(
-                  fontSize: 36,
-                  fontWeight: FontWeight.w700,
-                  color: MyColors.vistaBlue),
-            ),
-            Container(
-              width: 80,
-              height: 6,
-              color: MyColors.magicMint,
-            ),
-            SizedBox(height: 16),
-            Text(
-              AppLocalizations.of(context).prevCurrentWork,
-              style: TextStyle(
-                color: MyColors.white,
+            AnimatedPadding(
+              duration: Duration(milliseconds: 500),
+              padding: EdgeInsets.only(left: pixels >= 2279 ? 0.0 : 500.0),
+              curve: Curves.linearToEaseOut,
+              child: AnimatedOpacity(
+                opacity: pixels >= 2279 ? 1.0 : 0.5,
+                duration: Duration(milliseconds: 500),
+                child: Column(
+                  children: [
+                    Text(
+                      AppLocalizations.of(context).experience,
+                      style: TextStyle(
+                          fontSize: 36,
+                          fontWeight: FontWeight.w700,
+                          color: MyColors.vistaBlue),
+                    ),
+                    Container(
+                      width: 80,
+                      height: 6,
+                      color: MyColors.magicMint,
+                    ),
+                    SizedBox(height: 16),
+                    Text(
+                      AppLocalizations.of(context).prevCurrentWork,
+                      style: TextStyle(
+                        color: MyColors.white,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 60),

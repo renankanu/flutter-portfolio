@@ -19,7 +19,11 @@ class ModalSkill extends StatelessWidget {
               color: MyColors.magicMint,
             ),
           ),
-          Text(description),
+          SizedBox(height: 20),
+          Text(description,
+              style: TextStyle(
+                color: MyColors.vistaBlue,
+              )),
         ],
       ),
     );
