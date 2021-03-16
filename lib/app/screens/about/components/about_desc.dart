@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:port_dart/app/screens/about/components/social_button.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AboutDesc extends StatefulWidget {
   const AboutDesc({
@@ -36,7 +37,7 @@ class _AboutDescState extends State<AboutDesc> {
       child: Column(
         children: [
           Text(
-            'Olá, meu nome é Renan sou de Cianorte-PR. Comecei na programação em 2016 como desenvolvedor Android Nativo com Java, em 2018 comecei a programar Android Nativo com Kotlin, PHP e trabalhei com alguns serviços da AWS como: eC2, RDS, SNS, SES, S3... E no segundo semestre de 2019 comecei a programar em React Native e Flutter na Megaleios e estou até o momento.',
+            AppLocalizations.of(context).aboutMeDescOne,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w400,
@@ -45,7 +46,7 @@ class _AboutDescState extends State<AboutDesc> {
           ),
           SizedBox(height: 20),
           Text(
-            'Gosto de todos os assuntos que envolvem tecnologia, jogador de rugby, gosto de jogos eletrônicos, praticante de musculação e estudande de inglês. Café, café e café ☕',
+            AppLocalizations.of(context).aboutMeDescTwo,
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w300,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:port_dart/app/screens/components/menu_item.dart';
+import 'package:port_dart/app/components/menu_item.dart';
 import 'package:port_dart/app/utils/colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyAppBar extends StatefulWidget {
   final Function onPressAbout;
@@ -55,7 +56,7 @@ class _MyAppBarState extends State<MyAppBar> {
             Row(
               children: [
                 MenuItem(
-                  title: 'Sobre',
+                  title: AppLocalizations.of(context).about,
                   onHolver: (value) {
                     setState(() {
                       _isHovering[0] = value;
@@ -77,7 +78,7 @@ class _MyAppBarState extends State<MyAppBar> {
                 ),
                 SizedBox(width: 10),
                 MenuItem(
-                  title: 'Repositórios',
+                  title: AppLocalizations.of(context).repository,
                   onHolver: (value) {
                     setState(() {
                       _isHovering[2] = value;
@@ -88,7 +89,7 @@ class _MyAppBarState extends State<MyAppBar> {
                 ),
                 SizedBox(width: 10),
                 MenuItem(
-                  title: 'Experiência',
+                  title: AppLocalizations.of(context).experience,
                   onHolver: (value) {
                     setState(() {
                       _isHovering[3] = value;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:port_dart/app/utils/colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyDrawer extends StatefulWidget {
   final Function onPressAbout;
@@ -46,7 +47,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   widget.onPressAbout();
                 },
                 child: Text(
-                  'Sobre',
+                  AppLocalizations.of(context).about,
                   style: TextStyle(color: MyColors.white, fontSize: 18),
                 ),
               ),
@@ -68,7 +69,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   widget.onPressRepo();
                 },
                 child: Text(
-                  'Repositórios',
+                  AppLocalizations.of(context).repository,
                   style: TextStyle(color: MyColors.white, fontSize: 18),
                 ),
               ),
@@ -79,7 +80,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   widget.onPressXp();
                 },
                 child: Text(
-                  'Experiência',
+                  AppLocalizations.of(context).experience,
                   style: TextStyle(color: MyColors.white, fontSize: 18),
                 ),
               ),
@@ -87,7 +88,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Text(
-                    'Copyright © 2021 | RenanKanu',
+                    '${AppLocalizations.of(context).copyright} ${DateTime.now().year} ${AppLocalizations.of(context).renanKanu}',
                     style: TextStyle(
                       color: Colors.white54,
                       fontSize: 14,

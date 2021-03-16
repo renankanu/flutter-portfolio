@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:port_dart/app/app_bloc.dart';
 import 'package:port_dart/app/screens/about/about_section.dart';
-import 'package:port_dart/app/screens/components/my_appbar.dart';
-import 'package:port_dart/app/screens/components/my_drawer.dart';
+import 'package:port_dart/app/components/my_appbar.dart';
+import 'package:port_dart/app/components/my_drawer.dart';
 import 'package:port_dart/app/screens/experience/experience_section.dart';
 import 'package:port_dart/app/screens/footer/footer.dart';
 import 'package:port_dart/app/screens/home/components/background_container.dart';
@@ -11,6 +13,7 @@ import 'package:port_dart/app/screens/repositories/repository_section.dart';
 import 'package:port_dart/app/screens/skills/skill_section.dart';
 import 'package:port_dart/app/utils/colors.dart';
 import 'package:port_dart/app/utils/responsive.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeSection extends StatefulWidget {
   @override
@@ -18,11 +21,25 @@ class HomeSection extends StatefulWidget {
 }
 
 class _HomeSectionState extends State<HomeSection> {
+  final _appBloc = Modular.get<AppBloc>();
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final aboutKey = new GlobalKey();
   final skillKey = new GlobalKey();
   final repoKey = new GlobalKey();
   final xpKey = new GlobalKey();
+
+  _initLocale() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String locale = prefs.getString('locale') ?? 'pt';
+
+    _appBloc.setMessage(Locale.fromSubtags(languageCode: '$locale'));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _initLocale();
+  }
 
   @override
   Widget build(BuildContext context) {

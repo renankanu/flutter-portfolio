@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:port_dart/app/screens/about/components/about_desc.dart';
 import 'package:port_dart/app/screens/about/components/avatar.dart';
-import 'package:port_dart/app/screens/components/base_container.dart';
+import 'package:port_dart/app/components/base_container.dart';
 import 'package:port_dart/app/utils/responsive.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../utils/colors.dart';
 
@@ -23,10 +24,10 @@ class _AboutSectionState extends State<AboutSection> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Sobre mim',
+              AppLocalizations.of(context).aboutMe,
               style: TextStyle(
                   fontSize: 36,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w700,
                   color: MyColors.vistaBlue),
             ),
             Container(
