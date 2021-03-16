@@ -28,9 +28,6 @@ class _HomeSectionState extends State<HomeSection> {
   final repoKey = new GlobalKey();
   final xpKey = new GlobalKey();
 
-  ScrollController _controller;
-  double pixels = 0.0;
-
   _initLocale() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String locale = prefs.getString('locale') ?? 'pt';
@@ -42,14 +39,6 @@ class _HomeSectionState extends State<HomeSection> {
   void initState() {
     super.initState();
     _initLocale();
-
-    _controller = ScrollController();
-    _controller.addListener(() {
-      setState(() {
-        pixels = _controller.position.pixels;
-        print(_controller.position.pixels);
-      });
-    });
   }
 
   @override
@@ -133,7 +122,6 @@ class _HomeSectionState extends State<HomeSection> {
           Align(
             alignment: Alignment.center,
             child: SingleChildScrollView(
-              controller: _controller,
               child: Padding(
                 padding: const EdgeInsets.only(top: 60),
                 child: Column(
@@ -143,46 +131,10 @@ class _HomeSectionState extends State<HomeSection> {
                       child: Column(
                         children: [
                           IntroSection(),
-                          AnimatedAlign(
-                            duration: Duration(milliseconds: 500),
-                            alignment: pixels >= 53
-                                ? Alignment(0.0, 0.0)
-                                : Alignment(-20.0, 0.0),
-                            curve: Curves.linearToEaseOut,
-                            child: AnimatedOpacity(
-                              opacity: pixels >= 53 ? 1.0 : 0.2,
-                              duration: Duration(milliseconds: 500),
-                              child: AboutSection(key: aboutKey),
-                            ),
-                          ),
-                          AnimatedAlign(
-                            duration: Duration(milliseconds: 500),
-                            alignment: pixels >= 583
-                                ? Alignment(0.0, 0.0)
-                                : Alignment(-20.0, 0.0),
-                            curve: Curves.linearToEaseOut,
-                            child: AnimatedOpacity(
-                              opacity: pixels >= 583 ? 1.0 : 0.5,
-                              duration: Duration(milliseconds: 500),
-                              child: SkillSection(key: skillKey),
-                            ),
-                          ),
-                          AnimatedAlign(
-                            duration: Duration(milliseconds: 500),
-                            alignment: pixels >= 1680
-                                ? Alignment(0.0, 0.0)
-                                : Alignment(10.0, 0.0),
-                            curve: Curves.linearToEaseOut,
-                            child: AnimatedOpacity(
-                              opacity: pixels >= 1680 ? 1.0 : 0.5,
-                              duration: Duration(milliseconds: 500),
-                              child: RepositorySection(key: repoKey),
-                            ),
-                          ),
-                          ExperienceSection(
-                            key: xpKey,
-                            pixels: pixels,
-                          ),
+                          AboutSection(key: aboutKey),
+                          SkillSection(key: skillKey),
+                          RepositorySection(key: repoKey),
+                          ExperienceSection(key: xpKey),
                         ],
                       ),
                     ),
